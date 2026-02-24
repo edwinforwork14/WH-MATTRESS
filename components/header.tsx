@@ -36,7 +36,7 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <img src="/WH-sin-fondo.png" alt="WH-sin-fondo.png" className='w-25 pt-2' />
+                                <img src="/4- (WH) 1.png" alt="4- (WH) 1.png" className='w-20 pt-2' />
                             </Link>
 
                             <button

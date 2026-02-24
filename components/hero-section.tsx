@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+
 import Link from 'next/link'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -88,7 +89,7 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
                                             <Link href="#link">
-                                                <span className="text-nowrap">Cotizar Ahora</span>
+                                                <span className="text-nowrap">Contactanos</span>
                                             </Link>
                                         </Button>
                                     </div>
@@ -98,9 +99,15 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Ver Catálogo</span>
-                                        </Link>
+                                        <a
+                                            href="#ProductGridContainer"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                document.getElementById('ProductGridContainer')?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                        >
+                                            <span className="text-nowrap">Ver Productos</span>
+                                        </a>
                                     </Button>
                                 </AnimatedGroup>
                             </div>
