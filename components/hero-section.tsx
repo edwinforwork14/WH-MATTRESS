@@ -56,7 +56,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Muebles modernos que transforman tu hogar
+                                    Colchones de tecnología avanzada para un sueño reparador
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -65,7 +65,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                                    Elevamos el concepto de confort transformando cada habitación con muebles de diseño y mesas exclusivas.
+                                    Redefinimos el descanso con colchones viscoelásticos, muelles ensacados y sistemas de soporte lumbar diseñados para transformar cada noche en recuperación total.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -152,7 +152,7 @@ export default function HeroSection() {
                             <Link
                                 href="/"
                                 className="block text-sm duration-150 hover:opacity-75">
-                                <span> Meet Our Customers</span>
+                                <span> Conoce a Nuestros Clientes</span>
 
                                 <ChevronRight className="ml-1 inline-block size-3" />
                             </Link>

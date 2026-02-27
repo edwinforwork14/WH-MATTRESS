@@ -7,9 +7,8 @@ import { cn } from '@/lib/utils'
 import { ThemeButton } from './themebutton'
 
 const menuItems = [
-    { name: 'Sobre nosotros', href: '#link' },
     { name: 'Productos', href: '#link' },
-    { name: 'Precios', href: '#link' },
+    { name: 'Nosotros', href: '#link' },
     { name: 'Contacto', href: '#link' },
 ]
 
