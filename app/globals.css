@@ -6,12 +6,12 @@
   --background: oklch(1.0000 0 0);
   --foreground: oklch(0 0 0);
   --card: oklch(1.0000 0 0);
-  --card-foreground: oklch(0.1450 0 0);
+  --card-foreground: oklch(0 0 0);
   --popover: oklch(1.0000 0 0);
   --popover-foreground: oklch(0 0 0);
-  --primary: oklch(0.5120 0.1005 237.6268);
+  --primary: oklch(0.3832 0.0464 210.3186);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.4041 0.1330 254.9832);
+  --secondary: oklch(0.7054 0.0354 203.4228);
   --secondary-foreground: oklch(1.0000 0 0);
   --muted: oklch(0.9700 0 0);
   --muted-foreground: oklch(0.5560 0 0);
@@ -35,8 +35,8 @@
   --sidebar-accent-foreground: oklch(0.2050 0 0);
   --sidebar-border: oklch(0.9220 0 0);
   --sidebar-ring: oklch(0.7080 0 0);
-  --font-sans: Montserrat, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Amarna, ui-sans-serif, sans-serif, system-ui;
+  --font-sans: Alan Sans, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Abhaya Libre, ui-serif, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0.625rem;
   --shadow-x: 0;
@@ -59,14 +59,14 @@
 
 .dark {
   --background: oklch(0.0969 0 0);
-  --foreground: oklch(0.9010 0.0580 230.9020);
+  --foreground: oklch(1.0000 0 0);
   --card: oklch(0.2478 0 0);
   --card-foreground: oklch(0.7460 0.1600 232.6610);
   --popover: oklch(0.2690 0 0);
   --popover-foreground: oklch(1.0000 0 0);
-  --primary: oklch(0.5200 0.1050 223.1280);
+  --primary: oklch(0.3832 0.0464 210.3186);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.5880 0.1580 241.9660);
+  --secondary: oklch(0.3832 0.0464 210.3186);
   --secondary-foreground: oklch(0.9850 0 0);
   --muted: oklch(0.2690 0 0);
   --muted-foreground: oklch(0.7080 0 0);
@@ -90,8 +90,8 @@
   --sidebar-accent-foreground: oklch(0.9850 0 0);
   --sidebar-border: oklch(0.2750 0 0);
   --sidebar-ring: oklch(0.4390 0 0);
-  --font-sans: Montserrat, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Amarna, ui-sans-serif, sans-serif, system-ui;
+  --font-sans: Alan Sans, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Abhaya Libre, ui-serif, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0.625rem;
   --shadow-x: 0;
@@ -167,7 +167,6 @@
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
     @apply bg-background text-foreground;
   }

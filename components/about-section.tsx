@@ -37,7 +37,7 @@ const containerVariants = {
 
 export default function AboutSection() {
     return (
-        <section className="bg-background py-24 md:py-32 overflow-hidden">
+        <section className="py-24 md:py-32 overflow-hidden">
             {/* Subtle background decoration matching hero */}
             <div
                 aria-hidden
@@ -54,13 +54,7 @@ export default function AboutSection() {
                     className="text-center"
                 >
                     <motion.div variants={transitionVariants.item}>
-                        <Badge
-                            variant="outline"
-                            className="mb-6 gap-1.5 px-4 py-1.5 text-sm font-medium border-primary/30 text-primary"
-                        >
-                            <Sparkles className="size-3.5" />
-                            Nosotros
-                        </Badge>
+                        
                     </motion.div>
 
                     <motion.h2

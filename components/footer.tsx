@@ -1,120 +1,101 @@
-import { Logo } from '@/components/logo'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { cn } from '@/lib/utils'
-import { ChevronsUpDown } from 'lucide-react'
+"use client"
+
+import Image from 'next/image'
 import Link from 'next/link'
 
 const links = [
     {
-        group: 'Product',
+        group: 'Navegación',
         items: [
             {
-                title: 'Features',
-                href: '#',
+                title: 'Inicio',
+                href: '#hero',
             },
             {
-                title: 'Solution',
-                href: '#',
+                title: 'Características',
+                href: '#features',
             },
             {
-                title: 'Customers',
-                href: '#',
+                title: 'Beneficios',
+                href: '#content',
             },
             {
-                title: 'Pricing',
-                href: '#',
+                title: 'Productos',
+                href: '#products',
             },
             {
-                title: 'Help',
-                href: '#',
+                title: 'Nosotros',
+                href: '#about',
             },
             {
-                title: 'About',
-                href: '#',
+                title: 'Contacto',
+                href: '#cta',
             },
         ],
     },
     {
-        group: 'Solution',
+        group: 'Productos',
         items: [
             {
-                title: 'Startup',
-                href: '#',
+                title: 'Colchones Visco-elásticos',
+                href: '#products',
             },
             {
-                title: 'Freelancers',
-                href: '#',
+                title: 'Colchones de Resortes',
+                href: '#products',
             },
             {
-                title: 'Organizations',
-                href: '#',
+                title: 'Colchones Ortopédicos',
+                href: '#products',
             },
             {
-                title: 'Students',
-                href: '#',
+                title: 'Colchones Híbridos',
+                href: '#products',
             },
             {
-                title: 'Collaboration',
-                href: '#',
-            },
-            {
-                title: 'Design',
-                href: '#',
-            },
-            {
-                title: 'Management',
-                href: '#',
+                title: 'Almohadas y Accesorios',
+                href: '#products',
             },
         ],
     },
     {
-        group: 'Company',
+        group: 'Empresa',
         items: [
             {
-                title: 'About',
-                href: '#',
+                title: 'Nuestra Historia',
+                href: '#about',
             },
             {
-                title: 'Careers',
-                href: '#',
+                title: 'Misión y Visión',
+                href: '#about',
             },
             {
-                title: 'Blog',
-                href: '#',
+                title: 'Calidad y Certificaciones',
+                href: '#features',
             },
             {
-                title: 'Press',
-                href: '#',
-            },
-            {
-                title: 'Contact',
-                href: '#',
-            },
-            {
-                title: 'Help',
-                href: '#',
+                title: 'Garantías',
+                href: '#cta',
             },
         ],
     },
     {
-        group: 'Legal',
+        group: 'Contacto',
         items: [
             {
-                title: 'Licence',
+                title: 'WhatsApp',
+                href: '#cta',
+            },
+            {
+                title: 'Solicitar Cotización',
+                href: '#cta',
+            },
+            {
+                title: 'Política de Privacidad',
                 href: '#',
             },
             {
-                title: 'Privacy',
-                href: '#',
-            },
-            {
-                title: 'Cookies',
-                href: '#',
-            },
-            {
-                title: 'Security',
+                title: 'Términos y Condiciones',
                 href: '#',
             },
         ],
@@ -123,14 +104,14 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="border-b bg-white pt-20 dark:bg-transparent">
+        <footer className="border-t pt-20 relative z-20">
             <div className="mb-8 border-b md:mb-12">
                 <div className="mx-auto flex max-w-5xl flex-wrap items-end justify-between gap-6 px-6 pb-6">
                     <Link
                         href="/"
                         aria-label="go home"
                         className="block size-fit">
-                        <Logo />
+                        <Image src="/Logo.png" alt="WH Mattress Logo" width={150} height={40} className="object-contain" />
                     </Link>
                     <div className="flex flex-wrap justify-center gap-6 text-sm">
                         <Link

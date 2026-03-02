@@ -7,9 +7,12 @@ import { cn } from '@/lib/utils'
 import { ThemeButton } from './themebutton'
 
 const menuItems = [
-    { name: 'Productos', href: '#link' },
-    { name: 'Nosotros', href: '#link' },
-    { name: 'Contacto', href: '#link' },
+    { name: 'Inicio', href: '#hero' },
+    { name: 'Características', href: '#features' },
+    { name: 'Beneficios', href: '#content' },
+    { name: 'Productos', href: '#products' },
+    { name: 'Nosotros', href: '#about' },
+    { name: 'Contacto', href: '#cta' },
 ]
 
 export const HeroHeader = () => {

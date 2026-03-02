@@ -48,14 +48,14 @@ export default function HeroSection() {
                             className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
 
-                        <div className="mx-auto max-w-7xl px-6">
+                        <div className="mx-auto max-w-7xl px-4 sm:px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+                                    className="mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
                                     Colchones de tecnología avanzada para un sueño reparador
                                 </TextEffect>
                                 <TextEffect
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+                                    className="mx-auto mt-6 max-w-2xl text-balance text-base sm:text-lg px-2 sm:px-0">
                                     Redefinimos el descanso con colchones viscoelásticos, muelles ensacados y sistemas de soporte lumbar diseñados para transformar cada noche en recuperación total.
                                 </TextEffect>
 
@@ -80,16 +80,16 @@ export default function HeroSection() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                                     <div
                                         key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 w-full sm:w-auto">
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
-                                                <span className="text-nowrap">Contactanos</span>
+                                            className="rounded-xl px-5 text-base w-full sm:w-auto">
+                                            <Link href="#cta">
+                                                <span className="text-nowrap">Contáctanos</span>
                                             </Link>
                                         </Button>
                                     </div>
@@ -98,12 +98,12 @@ export default function HeroSection() {
                                         asChild
                                         size="lg"
                                         variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
+                                        className="rounded-xl px-5 w-full sm:w-auto">
                                         <a
-                                            href="#ProductGridContainer"
+                                            href="#products"
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                document.getElementById('ProductGridContainer')?.scrollIntoView({ behavior: 'smooth' });
+                                                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
                                             }}
                                         >
                                             <span className="text-nowrap">Ver Productos</span>
@@ -125,28 +125,30 @@ export default function HeroSection() {
                                 },
                                 ...transitionVariants,
                             }}>
-                            <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                            <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 sm:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                        className="bg-background w-full rounded-2xl hidden dark:block"
                                         src="/3.jpg"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        alt="Colchón WH Mattress"
+                                        width={2700}
+                                        height={1440}
+                                        style={{ aspectRatio: '15/8', objectFit: 'cover' }}
                                     />
                                     <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                        className="z-2 border-border/25 w-full rounded-2xl border dark:hidden"
                                         src="/3.jpg"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                        alt="Colchón WH Mattress"
+                                        width={2700}
+                                        height={1440}
+                                        style={{ aspectRatio: '15/8', objectFit: 'cover' }}
                                     />
                                 </div>
                             </div>
                         </AnimatedGroup>
                     </div>
                 </section>
-                <section className="bg-background pb-16 pt-16 md:pb-32">
+                <section className="hidden sm:block pb-16 pt-16 md:pb-32">
                     <div className="group relative m-auto max-w-5xl px-6">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                             <Link

@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
 import AnimatedButton from '@/components/button'
+import { Button as MovingBorderButton } from '@/components/ui/moving-border'
 
 export default function CTASection() {
     return (
@@ -19,7 +20,7 @@ export default function CTASection() {
                         preset="fade-in-blur"
                         speedSegment={0.3}
                         as="h2"
-                        className="text-4xl font-bold mb-4 text-white dark:text-foreground">
+                        className="text-2xl font-bold mb-4 text-white dark:text-foreground sm:text-3xl md:text-4xl">
                         Transforma tus noches. Recupera tu energía.
                     </TextEffect>
                     <TextEffect
@@ -28,10 +29,16 @@ export default function CTASection() {
                         speedSegment={0.3}
                         delay={0.5}
                         as="p"
-                        className="text-2xl w-full mb-10 text-white dark:text-white">
+                        className="text-base w-full mb-10 text-white dark:text-white sm:text-lg md:text-xl">
                         Descubre los colchones WH: tecnología viscoelástica, muelles ensacados y soporte lumbar diseñados para darte el sueño reparador que mereces.
                     </TextEffect>
-                    <AnimatedButton text="Contactanos" onClick={() => { }} />
+                    <MovingBorderButton
+                        onClick={() => console.log("click")}
+                        borderRadius="1.75rem"
+                        className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 font-semibold"
+                    >
+                        Descubre más
+                    </MovingBorderButton>
                 </div>
             </section>
         </div>

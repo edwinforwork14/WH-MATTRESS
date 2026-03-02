@@ -133,7 +133,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductGridContainer() {
     return (
-        <section id="ProductGridContainer" className="bg-background py-16 md:py-24">
+        <section id="ProductGridContainer" className="py-16 md:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-12 text-center pt-13">
