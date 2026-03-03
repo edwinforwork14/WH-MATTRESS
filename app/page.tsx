@@ -15,11 +15,11 @@ export default function Home() {
     <div>
       <BlueCurvyScroll>
         <section id="hero"><HeroSection /></section>
+         <section id="about"><AboutSection /></section>
         <section id="features"><Features /></section>
         <section id="content"><ContentSection /></section>
         <section id="products"><ProductGridContainer /></section>
         <section id="cta"><CTASection /></section>
-        <section id="about"><AboutSection /></section>
         <FooterSection />
       </BlueCurvyScroll>
     </div>

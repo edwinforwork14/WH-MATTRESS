@@ -8,10 +8,10 @@ import { ThemeButton } from './themebutton'
 
 const menuItems = [
     { name: 'Inicio', href: '#hero' },
+    { name: 'Nosotros', href: '#about' },
+    { name: 'Productos', href: '#products' },
     { name: 'Características', href: '#features' },
     { name: 'Beneficios', href: '#content' },
-    { name: 'Productos', href: '#products' },
-    { name: 'Nosotros', href: '#about' },
     { name: 'Contacto', href: '#cta' },
 ]
 
