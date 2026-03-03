@@ -25,8 +25,7 @@ const PRODUCTS: Product[] = [
         description:
             "Tecnología de espuma viscoelástica de alta densidad para un descanso celestial.",
         price: 1299,
-        image:
-            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
+        image: "/mattress_cloud_luxe.png",
         badge: "Nuevo",
         rating: 4.9,
         reviews: 128,
@@ -38,8 +37,7 @@ const PRODUCTS: Product[] = [
             "Soporte ortopédico superior con muelles ensacados de última generación.",
         price: 849,
         originalPrice: 1099,
-        image:
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+        image: "/mattress_ortho_firm.png",
         badge: "Descuento",
         rating: 4.7,
         reviews: 256,
@@ -50,8 +48,7 @@ const PRODUCTS: Product[] = [
         description:
             "Sistema de ventilación avanzado que regula la temperatura toda la noche.",
         price: 999,
-        image:
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80",
+        image: "/mattress_aircool_plus.png",
         badge: "Más Vendido",
         rating: 4.8,
         reviews: 312,
@@ -63,8 +60,7 @@ const PRODUCTS: Product[] = [
             "La fusión perfecta entre muelles de acero y capas de memory foam premium.",
         price: 1599,
         originalPrice: 1899,
-        image:
-            "https://images.unsplash.com/photo-1505693314120-0d443867891c?w=600&q=80",
+        image: "/mattress_hybrid_elite.png",
         badge: "Descuento",
         rating: 5.0,
         reviews: 87,
@@ -75,8 +71,7 @@ const PRODUCTS: Product[] = [
         description:
             "Diseñado especialmente para el crecimiento saludable de los más pequeños.",
         price: 549,
-        image:
-            "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
+        image: "/mattress_kids_dream.png",
         badge: "Nuevo",
         rating: 4.6,
         reviews: 64,
@@ -87,8 +82,7 @@ const PRODUCTS: Product[] = [
         description:
             "Equilibrio perfecto entre firmeza y suavidad para todo tipo de durmientes.",
         price: 729,
-        image:
-            "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
+        image: "/mattress_zen_balance.png",
         rating: 4.5,
         reviews: 193,
     },

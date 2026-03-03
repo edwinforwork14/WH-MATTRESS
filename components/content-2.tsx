@@ -33,16 +33,16 @@ export default function ContentSection() {
                     <div className="md:mask-l-from-35% md:mask-l-to-55% mt-12 h-fit md:absolute md:-inset-y-12 md:inset-x-0 md:mt-0">
                         <div className="border-border/50 relative rounded-2xl border border-dotted p-2">
                             <Image
-                                src="/2.png"
-                                className="hidden rounded-[12px] dark:block"
-                                alt="payments illustration dark"
+                                src="/osito-2.jpg"
+                                className="hidden w-full h-auto rounded-[12px] dark:block"
+                                alt="Colchón Hybrid Elite – capas viscoelásticas y muelles"
                                 width={1207}
                                 height={929}
                             />
                             <Image
-                                src="/2.png"
-                                className="rounded-[12px] shadow dark:hidden"
-                                alt="payments illustration light"
+                                src="/osito-2.jpg"
+                                className="w-full h-auto rounded-[12px] shadow dark:hidden"
+                                alt="Colchón Hybrid Elite – capas viscoelásticas y muelles"
                                 width={1207}
                                 height={929}
                             />
