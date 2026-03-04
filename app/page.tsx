@@ -8,6 +8,7 @@ import CTASection from "@/components/CTASection";
 import AboutSection from "@/components/about-section";
 import FooterSection from "@/components/footer";
 import BlueCurvyScroll from "@/components/BlueCurvyScroll";
+import WorkshopGallery from "@/components/WorkshopGallery";
 
 
 export default function Home() {
@@ -15,11 +16,12 @@ export default function Home() {
     <div>
       <BlueCurvyScroll>
         <section id="hero"><HeroSection /></section>
+        <section id="workshop"><WorkshopGallery /></section>
          <section id="about"><AboutSection /></section>
+         <section id="products"><ProductGridContainer /></section>
+         <section id="cta"><CTASection /></section>
         <section id="features"><Features /></section>
         <section id="content"><ContentSection /></section>
-        <section id="products"><ProductGridContainer /></section>
-        <section id="cta"><CTASection /></section>
         <FooterSection />
       </BlueCurvyScroll>
     </div>
