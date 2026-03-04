@@ -167,8 +167,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    /* Smooth scroll global — el header fijo no tapa el contenido */
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 90px;
+    /* altura del header fijo */
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Forzar smooth scroll aunque Windows tenga "Reducir animaciones" activado */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth !important;
   }
 }
 

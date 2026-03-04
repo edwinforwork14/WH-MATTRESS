@@ -88,9 +88,19 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base w-full sm:w-auto">
-                                            <Link href="#cta">
+                                            <a
+                                                href="#cta"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    const el = document.getElementById('cta');
+                                                    if (el) {
+                                                        const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                                                        window.scrollTo({ top, behavior: 'smooth' });
+                                                    }
+                                                }}
+                                            >
                                                 <span className="text-nowrap">Contáctanos</span>
-                                            </Link>
+                                            </a>
                                         </Button>
                                     </div>
                                     <Button
@@ -103,7 +113,11 @@ export default function HeroSection() {
                                             href="#products"
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                                                const el = document.getElementById('products');
+                                                if (el) {
+                                                    const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                                                    window.scrollTo({ top, behavior: 'smooth' });
+                                                }
                                             }}
                                         >
                                             <span className="text-nowrap">Ver Productos</span>
