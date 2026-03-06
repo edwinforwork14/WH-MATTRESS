@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Tipo para la imagen seleccionada en el modal
-interface SelectedImage {
+// Tipo para las imágenes de la galería
+interface ImageData {
   src: string;
   alt: string;
   title: string;
@@ -15,7 +15,7 @@ interface SelectedImage {
 
 const WorkshopGallery = () => {
   // Estado para la imagen seleccionada (null si ninguna está abierta)
-  const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(null);
+  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
 
   const images = [
     {
@@ -123,6 +123,12 @@ const WorkshopGallery = () => {
                 <p className="text-gray-400 text-sm">{selectedImage.desc}</p>
               </motion.div>
 
+              {/* Botón de cierre */}
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
+              >
+              </button>
             </motion.div>
           </div>
         )}
