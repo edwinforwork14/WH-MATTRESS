@@ -3,9 +3,19 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Tipo para la imagen seleccionada en el modal
+interface SelectedImage {
+  src: string;
+  alt: string;
+  title: string;
+  desc: string;
+  grid: string;
+  id: number;
+}
+
 const WorkshopGallery = () => {
   // Estado para la imagen seleccionada (null si ninguna está abierta)
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(null);
 
   const images = [
     {
@@ -52,8 +62,8 @@ const WorkshopGallery = () => {
         {/* Grid de Imágenes */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[300px]">
           {images.map((img, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               layoutId={`img-${index}`} // Conecta la miniatura con el modal
               onClick={() => setSelectedImage({ ...img, id: index })}
               className={`group relative overflow-hidden rounded-xl border border-border bg-card cursor-zoom-in ${img.grid}`}
@@ -101,9 +111,9 @@ const WorkshopGallery = () => {
                 className="object-contain"
                 priority
               />
-              
+
               {/* Info adicional en el modal */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -113,13 +123,6 @@ const WorkshopGallery = () => {
                 <p className="text-gray-400 text-sm">{selectedImage.desc}</p>
               </motion.div>
 
-              {/* Botón de cierre */}
-              <button 
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
-              >
-                Cerrar [×]
-              </button>
             </motion.div>
           </div>
         )}

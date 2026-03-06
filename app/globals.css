@@ -172,7 +172,7 @@
     /* Smooth scroll global — el header fijo no tapa el contenido */
     scroll-behavior: smooth !important;
     scroll-padding-top: 90px;
-    /* altura del header fijo */
+   /* altura del header fijo */
   }
 
   body {
