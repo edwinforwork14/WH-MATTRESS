@@ -1,9 +1,7 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
 import { TextEffect } from '@/components/ui/text-effect'
-import AnimatedButton from '@/components/button'
-import { Button as MovingBorderButton } from '@/components/ui/moving-border'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 export default function CTASection() {
     return (
@@ -32,13 +30,9 @@ export default function CTASection() {
                         className="text-base w-full mb-10 text-white dark:text-white sm:text-lg md:text-xl">
                         Descubre los colchones WH: tecnología viscoelástica, muelles ensacados y soporte lumbar diseñados para darte el sueño reparador que mereces.
                     </TextEffect>
-                    <MovingBorderButton
-                        onClick={() => window.open("https://wa.me/50769889415", "_blank")}
-                        borderRadius="1.75rem"
-                        className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 font-semibold"
-                    >
-                        Descubre más
-                    </MovingBorderButton>
+                    <div className="flex justify-center">
+                        <WhatsAppButton phoneNumber="50769889415" />
+                    </div>
                 </div>
             </section>
         </div>
