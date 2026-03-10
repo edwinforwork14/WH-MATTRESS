@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ArrowRight } from "lucide-react";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -8,12 +10,8 @@ interface Product {
     id: number;
     name: string;
     description: string;
-    price: number;
-    originalPrice?: number;
     image: string;
-    badge?: "Nuevo" | "Descuento" | "Más Vendido";
-    rating: number;
-    reviews: number;
+    badge?: string;
 }
 
 // ─── Mock Data ───────────────────────────────────────────────────────────────
@@ -22,132 +20,160 @@ const PRODUCTS: Product[] = [
     {
         id: 1,
         name: "Colchón Cloud Luxe",
-        description:
-            "Tecnología de espuma viscoelástica de alta densidad para un descanso celestial.",
-        price: 1299,
+        description: "Tecnología de espuma viscoelástica de alta densidad para un descanso celestial. Diseñado para adaptarse a la forma de tu cuerpo y aliviar puntos de presión.",
         image: "/mattress_cloud_luxe.png",
-        badge: "Nuevo",
-        rating: 4.9,
-        reviews: 128,
+        badge: "Más Confortable",
     },
     {
         id: 2,
         name: "Colchón Ortho Firm",
-        description:
-            "Soporte ortopédico superior con muelles ensacados de última generación.",
-        price: 849,
-        originalPrice: 1099,
+        description: "Soporte ortopédico superior con muelles ensacados de última generación. La opción ideal para quienes buscan firmeza y cuidado de la postura lumbar.",
         image: "/mattress_ortho_firm.png",
-        badge: "Descuento",
-        rating: 4.7,
-        reviews: 256,
     },
     {
         id: 3,
         name: "Colchón AirCool Plus",
-        description:
-            "Sistema de ventilación avanzado que regula la temperatura toda la noche.",
-        price: 999,
+        description: "Sistema de ventilación avanzado que regula la temperatura toda la noche. Mantente fresco incluso en las noches más calurosas del verano.",
         image: "/mattress_aircool_plus.png",
-        badge: "Más Vendido",
-        rating: 4.8,
-        reviews: 312,
+        badge: "Tecnología Fresh",
     },
     {
         id: 4,
         name: "Colchón Hybrid Elite",
-        description:
-            "La fusión perfecta entre muelles de acero y capas de memory foam premium.",
-        price: 1599,
-        originalPrice: 1899,
+        description: "La fusión perfecta entre muelles de acero y capas de memory foam premium. Lo mejor de ambos mundos en un solo producto de alta gama.",
         image: "/mattress_hybrid_elite.png",
-        badge: "Descuento",
-        rating: 5.0,
-        reviews: 87,
-    },
-    {
-        id: 5,
-        name: "Colchón Kids Dream",
-        description:
-            "Diseñado especialmente para el crecimiento saludable de los más pequeños.",
-        price: 549,
-        image: "/mattress_kids_dream.png",
-        badge: "Nuevo",
-        rating: 4.6,
-        reviews: 64,
-    },
-    {
-        id: 6,
-        name: "Colchón Zen Balance",
-        description:
-            "Equilibrio perfecto entre firmeza y suavidad para todo tipo de durmientes.",
-        price: 729,
-        image: "/mattress_zen_balance.png",
-        rating: 4.5,
-        reviews: 193,
-    },
+    }
 ];
 
-
-
-// ─── ProductCard ─────────────────────────────────────────────────────────────
-
-function ProductCard({ product }: { product: Product }) {
-    return (
-        <article
-            className="group flex flex-col overflow-hidden rounded-[calc(var(--radius)+6px)] border border-border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            style={{ boxShadow: "var(--shadow-md)" }}
-        >
-            {/* ── Image Container ── */}
-            <div className="relative overflow-hidden bg-muted" style={{ aspectRatio: "4/5" }}>
-                {/* Zoom on hover */}
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                    loading="lazy"
-                />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-            </div>
-
-            {/* ── Content ── */}
-            <div className="p-4">
-                <h3 className="line-clamp-1 font-semibold leading-snug tracking-tight text-foreground">
-                    {product.name}
-                </h3>
-            </div>
-        </article>
-    );
-}
-
-// ─── ProductGridContainer ─────────────────────────────────────────────────────
+// ─── Componente Principal ───────────────────────────────────────────────────
 
 export default function ProductGridContainer() {
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
     return (
-        <section id="ProductGridContainer" className="py-16 md:py-24">
+        <section className="py-12 md:py-24 bg-background">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
                 {/* Header */}
-                <div className="mb-12 text-center pt-13">
-                    <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                        Colchones de Alta Calidad
+                <div className="mb-16 text-center">
+                    <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+                        Nuestra Colección Premium
                     </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
-                        Descubre nuestra colección premium. Cada colchón está diseñado para
-                        ofrecerte el descanso que mereces.
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        Explora la ingeniería detrás de tu descanso.
                     </p>
                 </div>
 
-                {/* Grid — 1 col mobile · 2 tablet · 3 desktop · 4 wide desktop */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {/* Grid */}
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {PRODUCTS.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+                        <motion.div
+                            key={product.id}
+                            layoutId={`card-${product.id}`}
+                            onClick={() => setSelectedProduct(product)}
+                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card transition-all hover:shadow-xl"
+                        >
+                            <div className="relative aspect-[4/5] overflow-hidden">
+                                <motion.img
+                                    layoutId={`image-${product.id}`}
+                                    src={product.image}
+                                    alt={product.name}
+                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                            </div>
+                            <div className="p-5">
+                                <h3 className="text-xl font-bold text-foreground">{product.name}</h3>
+                                <p className="mt-2 text-sm text-primary font-medium">Ver detalles →</p>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
-
             </div>
+
+            {/* ── Modal con Expansión Lateral ── */}
+            <AnimatePresence>
+                {selectedProduct && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        {/* Overlay */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setSelectedProduct(null)}
+                            className="absolute inset-0 bg-background/90 backdrop-blur-md"
+                        />
+
+                        {/* Modal Container */}
+                        <motion.div
+                            className="relative flex w-full max-w-4xl flex-col overflow-hidden rounded-3xl bg-card shadow-2xl md:flex-row"
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                        >
+                            {/* Imagen (Lado Izquierdo) */}
+                            <div className="relative w-full md:w-1/2">
+                                <motion.img
+                                    layoutId={`image-${selectedProduct.id}`}
+                                    src={selectedProduct.image}
+                                    alt={selectedProduct.name}
+                                    className="h-full min-h-[300px] w-full object-cover md:h-[600px]"
+                                />
+                                <button
+                                    onClick={() => setSelectedProduct(null)}
+                                    className="absolute left-4 top-4 rounded-full bg-background/80 p-2 text-foreground md:hidden"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            {/* Info (Lado Derecho / Despliegue) */}
+                            <motion.div
+                                initial={{ x: 30, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                                className="flex w-full flex-col justify-center p-8 md:w-1/2 md:p-12"
+                            >
+                                <div className="flex items-center justify-between">
+                                    {selectedProduct.badge && (
+                                        <span className="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+                                            {selectedProduct.badge}
+                                        </span>
+                                    )}
+                                    <button
+                                        onClick={() => setSelectedProduct(null)}
+                                        className="hidden text-muted-foreground hover:text-foreground md:block"
+                                    >
+                                        <X size={24} />
+                                    </button>
+                                </div>
+
+                                <h2 className="mt-4 text-3xl font-extrabold text-foreground md:text-4xl">
+                                    {selectedProduct.name}
+                                </h2>
+
+                                <div className="mt-6 h-1 w-12 bg-primary/40" />
+
+                                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                                    {selectedProduct.description}
+                                </p>
+
+                                <button
+                                    onClick={() => {
+                                        const phone = "50769889415";
+                                        const message = `Hola, estoy interesado en el ${selectedProduct.name}. Me gustaría consultar disponibilidad.`;
+                                        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+                                    }}
+                                    className="mt-10 flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 font-bold text-background transition-transform hover:scale-105 active:scale-95"
+                                >
+                                    Consultar Disponibilidad
+                                    <ArrowRight size={18} />
+                                </button>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

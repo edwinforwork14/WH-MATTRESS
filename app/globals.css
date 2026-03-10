@@ -17,7 +17,7 @@
   --muted-foreground: oklch(0.5560 0 0);
   --accent: oklch(0.6061 0.0123 243.7658);
   --accent-foreground: oklch(1.0000 0 0);
-  --destructive: oklch(0.5770 0.2450 27.3250);
+  --destructive: oklch(0.6140 0.1064 210.5268);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9220 0 0);
   --input: oklch(0.9220 0 0);
@@ -167,14 +167,6 @@
   * {
     @apply border-border outline-ring/50;
   }
-
-  html {
-    /* Smooth scroll global — el header fijo no tapa el contenido */
-    scroll-behavior: smooth !important;
-    scroll-padding-top: 90px;
-   /* altura del header fijo */
-  }
-
   body {
     @apply bg-background text-foreground;
   }

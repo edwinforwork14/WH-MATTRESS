@@ -33,7 +33,7 @@ const WorkshopGallery = () => {
       grid: 'md:col-span-4 md:row-span-1'
     },
     {
-      src: '/maquina3.jpeg',
+      src: '/maquina5.jpeg',
       alt: 'Línea de ensamblaje de colchones',
       title: 'Control de Calidad',
       desc: 'Supervisión en cada etapa.',
@@ -89,13 +89,15 @@ const WorkshopGallery = () => {
       {/* MODAL ANIMADO */}
       <AnimatePresence>
         {selectedImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12">
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            onClick={() => setSelectedImage(null)}
+          >
             {/* Fondo oscuro con fade-in */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
               className="absolute inset-0 bg-black/90 backdrop-blur-sm"
             />
 
@@ -122,13 +124,6 @@ const WorkshopGallery = () => {
                 <h4 className="text-white text-lg font-bold">{selectedImage.title}</h4>
                 <p className="text-gray-400 text-sm">{selectedImage.desc}</p>
               </motion.div>
-
-              {/* Botón de cierre */}
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
-              >
-              </button>
             </motion.div>
           </div>
         )}

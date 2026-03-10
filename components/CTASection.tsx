@@ -5,7 +5,7 @@ import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 export default function CTASection() {
     return (
-        <div className="pb-20">
+        <div >
             <section
                 className="relative w-full min-h-[500px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-cta-section p-6"
             >
