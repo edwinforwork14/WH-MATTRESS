@@ -1,6 +1,7 @@
 'use client'
 import { Menu, X } from 'lucide-react'
 import React from 'react'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { ThemeButton } from './themebutton'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -52,15 +53,15 @@ export const HeroHeader = () => {
 
     return (
         <header>
-            <nav className="fixed z-50 w-full px-2">
+            <nav className="fixed z-50 w-full px-2 font-sans" aria-label="Navegación principal de WH Mattress">
                 <div className={cn(
                     'mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12',
                     isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5'
                 )}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
-                            <a href="/" className="flex items-center space-x-2">
-                                <img src="/4- (WH) 1.png" alt="Logo" className='w-20 pt-2' />
+                            <a href="/" className="flex items-center space-x-2" aria-label="WH Mattress – ir al inicio">
+                                <Image src="/4- (WH) 1.png" alt="WH Mattress – logotipo oficial" width={80} height={32} priority className='pt-2' />
                             </a>
 
                             {/* Botón hamburguesa con ícono animado */}
@@ -82,7 +83,7 @@ export const HeroHeader = () => {
                             </button>
                         </div>
 
-                        {/* Menú Escritorio — sin cambios */}
+                        {/* Menú Escritorio — dinámico con scroll */}
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
                             <ul className="flex gap-8 text-sm">
                                 {menuItems.map((item, index) => (
@@ -90,7 +91,10 @@ export const HeroHeader = () => {
                                         <a
                                             href={item.href}
                                             onClick={(e) => handleScrollClick(e, item.href)}
-                                            className="text-muted-foreground hover:text-blue-400 cursor-pointer block duration-150">
+                                            className={cn(
+                                                "cursor-pointer block duration-150 hover:text-destructive",
+                                                isScrolled ? "text-foreground" : "text-white/90"
+                                            )}>
                                             {item.name}
                                         </a>
                                     </li>

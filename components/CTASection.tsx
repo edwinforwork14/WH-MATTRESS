@@ -7,7 +7,7 @@ export default function CTASection() {
     return (
         <div >
             <section
-                className="relative w-full min-h-[500px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-cta-section p-6"
+                className="relative w-full min-h-[500px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-cta-section p-6 font-sans"
             >
                 {/* Overlay azul oscuro sobre la imagen de fondo */}
                 <div className="absolute inset-0 bg-blue-950/55 mix-blend-multiply" aria-hidden />
@@ -18,7 +18,7 @@ export default function CTASection() {
                         preset="fade-in-blur"
                         speedSegment={0.3}
                         as="h2"
-                        className="text-2xl font-bold mb-4 text-white dark:text-foreground sm:text-3xl md:text-4xl">
+                        className="text-2xl font-semibold mb-4 text-white dark:text-title sm:text-3xl md:text-4xl text-balance">
                         Transforma tus noches. Recupera tu energía.
                     </TextEffect>
                     <TextEffect

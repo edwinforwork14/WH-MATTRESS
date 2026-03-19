@@ -1,5 +1,3 @@
-"use client";
-
 import HeroSection from "@/components/hero-section";
 import Features from "@/components/features-4";
 import ContentSection from "@/components/content-2";
@@ -9,11 +7,13 @@ import AboutSection from "@/components/about-section";
 import FooterSection from "@/components/footer";
 import WorkshopGallery from "@/components/WorkshopGallery";
 import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
+import LayeredBackground from "@/components/LayeredBackground";
 
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative min-h-screen">
+      <LayeredBackground />
       <section id="hero"><HeroSection /></section>
       <section id="workshop"><WorkshopGallery /></section>
       <section id="about"><AboutSection /></section>

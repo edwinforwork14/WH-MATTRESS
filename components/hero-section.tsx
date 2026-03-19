@@ -32,7 +32,7 @@ export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-hidden">
+            <main className="overflow-hidden font-sans">
                 <div
                     aria-hidden
                     className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -45,7 +45,7 @@ export default function HeroSection() {
 
                         <div
                             aria-hidden
-                            className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
+                            className=""
                         />
 
                         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -55,7 +55,7 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
+                                    className="text-title mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
                                     Colchones de tecnología avanzada para un sueño reparador
                                 </TextEffect>
                                 <TextEffect
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-6 max-w-2xl text-balance text-base sm:text-lg px-2 sm:px-0">
+                                    className="text-white/90 mx-auto mt-6 max-w-3xl text-balance text-base sm:text-lg px-2 sm:px-0">
                                     Redefinimos el descanso con colchones viscoelásticos, muelles ensacados y sistemas de soporte lumbar diseñados para transformar cada noche en recuperación total.
                                 </TextEffect>
 
@@ -99,7 +99,7 @@ export default function HeroSection() {
                                                     }
                                                 }}
                                             >
-                                                <span className="text-nowrap">Contáctanos</span>
+                                                <span className="text-white">Contáctanos</span>
                                             </a>
                                         </Button>
                                     </div>
@@ -120,7 +120,7 @@ export default function HeroSection() {
                                                 }
                                             }}
                                         >
-                                            <span className="text-nowrap">Ver Productos</span>
+                                            <span className="text-nowrap text-white">Ver Productos</span>
                                         </a>
                                     </Button>
                                 </AnimatedGroup>
@@ -144,17 +144,19 @@ export default function HeroSection() {
                                     <Image
                                         className="bg-background w-full rounded-2xl hidden dark:block"
                                         src="/3.jpg"
-                                        alt="Colchón WH Mattress"
+                                        alt="Colchón viscoelástico WH Mattress con muelles ensacados – vista superior"
                                         width={2700}
                                         height={1440}
+                                        priority
                                         style={{ aspectRatio: '15/8', objectFit: 'cover' }}
                                     />
                                     <Image
                                         className="z-2 border-border/25 w-full rounded-2xl border dark:hidden"
                                         src="/3.jpg"
-                                        alt="Colchón WH Mattress"
+                                        alt="Colchón viscoelástico WH Mattress con muelles ensacados – vista superior"
                                         width={2700}
                                         height={1440}
+                                        priority
                                         style={{ aspectRatio: '15/8', objectFit: 'cover' }}
                                     />
                                 </div>

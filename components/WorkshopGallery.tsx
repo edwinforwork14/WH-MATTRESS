@@ -42,7 +42,7 @@ const WorkshopGallery = () => {
   ];
 
   return (
-    <section className="py-20 bg-background text-foreground">
+    <section className="py-20 bg-transparent text-foreground font-sans">
       <div className="container mx-auto px-4">
         {/* Cabecera */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">

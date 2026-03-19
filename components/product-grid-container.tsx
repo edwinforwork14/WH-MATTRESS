@@ -51,12 +51,12 @@ export default function ProductGridContainer() {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
     return (
-        <section className="py-12 md:py-24 bg-background">
+        <section className="py-12 md:py-24 bg-transparent font-sans" aria-labelledby="products-heading">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+                    <h2 id="products-heading" className="text-4xl font-semibold text-balance text-title sm:text-5xl">
                         Nuestra Colección Premium
                     </h2>
                     <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -71,7 +71,7 @@ export default function ProductGridContainer() {
                             key={product.id}
                             layoutId={`card-${product.id}`}
                             onClick={() => setSelectedProduct(product)}
-                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card transition-all hover:shadow-xl"
+                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all hover:shadow-xl"
                         >
                             <div className="relative aspect-[4/5] overflow-hidden">
                                 <motion.img
@@ -83,7 +83,7 @@ export default function ProductGridContainer() {
                                 <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
                             </div>
                             <div className="p-5">
-                                <h3 className="text-xl font-bold text-foreground">{product.name}</h3>
+                                <h3 className="text-xl font-semibold text-title">{product.name}</h3>
                                 <p className="mt-2 text-sm text-primary font-medium">Ver detalles →</p>
                             </div>
                         </motion.div>
@@ -121,6 +121,7 @@ export default function ProductGridContainer() {
                                 />
                                 <button
                                     onClick={() => setSelectedProduct(null)}
+                                    aria-label="Cerrar detalle de producto"
                                     className="absolute left-4 top-4 rounded-full bg-background/80 p-2 text-foreground md:hidden"
                                 >
                                     <X size={20} />
@@ -142,13 +143,14 @@ export default function ProductGridContainer() {
                                     )}
                                     <button
                                         onClick={() => setSelectedProduct(null)}
+                                        aria-label="Cerrar detalle de producto"
                                         className="hidden text-muted-foreground hover:text-foreground md:block"
                                     >
                                         <X size={24} />
                                     </button>
                                 </div>
 
-                                <h2 className="mt-4 text-3xl font-extrabold text-foreground md:text-4xl">
+                                <h2 className="mt-4 text-3xl font-semibold text-balance text-title md:text-4xl">
                                     {selectedProduct.name}
                                 </h2>
 

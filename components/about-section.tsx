@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Target, Eye, Sparkles } from "lucide-react"
+
 
 const transitionVariants = {
     item: {
@@ -37,8 +37,7 @@ const containerVariants = {
 
 export default function AboutSection() {
     return (
-        <section className="py-24 md:py-32 overflow-hidden">
-            {/* Subtle background decoration matching hero */}
+        <section className="relative py-24 md:py-32 overflow-hidden font-sans">
             <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -z-10 size-full [background:radial-gradient(80%_60%_at_50%_0%,var(--color-primary)/8%,transparent_70%)]"
@@ -54,7 +53,7 @@ export default function AboutSection() {
                     className="text-center"
                 >
                     <motion.div variants={transitionVariants.item}>
-                        
+
                     </motion.div>
 
                     <motion.h2
@@ -85,17 +84,17 @@ export default function AboutSection() {
                 >
                     {/* Mission Card */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/60 bg-card transition-shadow duration-300 hover:shadow-md">
+                        <Card className="group relative h-full overflow-hidden border-border/60 bg-chart-2/20 transition-shadow duration-300 hover:shadow-md">
                             {/* Accent gradient top bar */}
                             <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary/60 via-primary to-secondary/60" />
                             <CardContent className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
                                 </div>
-                                <h3 className="mb-3 text-xl font-semibold text-card-foreground">
+                                <h3 className="mb-3 text-xl font-semibold text-about">
                                     Nuestra Misión
                                 </h3>
-                                <p className="text-base leading-relaxed text-muted-foreground">
+                                <p className="text-about/80 text-base leading-relaxed">
                                     Democratizar el acceso a colchones de tecnología premium en América Latina.
                                     Nos comprometemos a mejorar la salud postural y la calidad del sueño de nuestros clientes
                                     mediante colchones con muelles ensacados, espumas viscoelásticas e independencia de lechos
@@ -107,17 +106,17 @@ export default function AboutSection() {
 
                     {/* Vision Card */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/60 bg-card transition-shadow duration-300 hover:shadow-md">
+                        <Card className="group relative h-full overflow-hidden border-border/60 bg-chart-2/20 transition-shadow duration-300 hover:shadow-md">
                             {/* Accent gradient top bar */}
                             <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-secondary/60 via-secondary to-primary/60" />
                             <CardContent className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
                                 </div>
-                                <h3 className="mb-3 text-xl font-semibold text-card-foreground">
+                                <h3 className="mb-3 text-xl font-semibold text-about">
                                     Nuestra Visión
                                 </h3>
-                                <p className="text-base leading-relaxed text-muted-foreground">
+                                <p className="text-about/80 text-base leading-relaxed">
                                     Liderar el mercado latinoamericano de colchones de tecnología avanzada,
                                     reconocidos por nuestra ingeniería del sueño, soporte lumbar diferenciado y firmeza
                                     certificada. Aspiramos a ser el colchón que elige cada familia que prioriza
@@ -144,9 +143,9 @@ export default function AboutSection() {
                         <motion.div
                             key={stat.label}
                             variants={transitionVariants.item}
-                            className="flex flex-col items-center justify-center gap-1 bg-card px-6 py-8 text-center last:col-span-2 md:last:col-span-1"
+                            className="flex flex-col items-center justify-center gap-1 bg-chart-2/ px-6 py-8 text-center last:col-span-2 md:last:col-span-1"
                         >
-                            <span className="text-3xl font-semibold text-primary md:text-4xl">{stat.value}</span>
+                            <span className="text-3xl font-semibold text-about md:text-4xl">{stat.value}</span>
                             <span className="text-sm text-muted-foreground">{stat.label}</span>
                         </motion.div>
                     ))}
