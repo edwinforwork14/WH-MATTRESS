@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Eye, Sparkles } from "lucide-react"
+import { Target, Eye, Clock, Users, Package } from "lucide-react"
 
 
 const transitionVariants = {
@@ -35,6 +35,12 @@ const containerVariants = {
     },
 }
 
+const stats = [
+    { value: "10+", label: "Años fabricando colchones", icon: <Clock className="size-5" /> },
+    { value: "5,000+", label: "Clientes que duermen mejor", icon: <Users className="size-5" /> },
+    { value: "200+", label: "Modelos disponibles", icon: <Package className="size-5" /> },
+]
+
 export default function AboutSection() {
     return (
         <section className="relative py-24 md:py-32 overflow-hidden font-sans">
@@ -52,8 +58,11 @@ export default function AboutSection() {
                     viewport={{ once: true, margin: "-80px" }}
                     className="text-center"
                 >
-                    <motion.div variants={transitionVariants.item}>
-
+                    {/* Badge */}
+                    <motion.div variants={transitionVariants.item} className="mb-5">
+                        <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                            Sobre Nosotros
+                        </span>
                     </motion.div>
 
                     <motion.h2
@@ -84,9 +93,9 @@ export default function AboutSection() {
                 >
                     {/* Mission Card */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/60 bg-chart-2/20 transition-shadow duration-300 hover:shadow-md">
+                        <Card className="group relative h-full overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg">
                             {/* Accent gradient top bar */}
-                            <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary/60 via-primary to-secondary/60" />
+                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/60 via-primary to-secondary/60 transition-all duration-300 group-hover:from-primary/80 group-hover:to-secondary/80" />
                             <CardContent className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
@@ -106,9 +115,9 @@ export default function AboutSection() {
 
                     {/* Vision Card */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/60 bg-chart-2/20 transition-shadow duration-300 hover:shadow-md">
+                        <Card className="group relative h-full overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-secondary/30 hover:shadow-lg">
                             {/* Accent gradient top bar */}
-                            <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-secondary/60 via-secondary to-primary/60" />
+                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/60 via-secondary to-primary/60 transition-all duration-300 group-hover:from-secondary/80 group-hover:to-primary/80" />
                             <CardContent className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
@@ -133,18 +142,17 @@ export default function AboutSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-40px" }}
-                    className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 md:grid-cols-3"
+                    className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3"
                 >
-                    {[
-                        { value: "10+", label: "Años fabricando colchones" },
-                        { value: "5,000+", label: "Clientes que duermen mejor" },
-                        { value: "200+", label: "Modelos de colchones disponibles" },
-                    ].map((stat) => (
+                    {stats.map((stat) => (
                         <motion.div
                             key={stat.label}
                             variants={transitionVariants.item}
-                            className="flex flex-col items-center justify-center gap-1 bg-chart-2/ px-6 py-8 text-center last:col-span-2 md:last:col-span-1"
+                            className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/50 bg-background/50 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:shadow-md last:col-span-2 md:last:col-span-1"
                         >
+                            <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                                {stat.icon}
+                            </div>
                             <span className="text-3xl font-semibold text-about md:text-4xl">{stat.value}</span>
                             <span className="text-sm text-muted-foreground">{stat.label}</span>
                         </motion.div>

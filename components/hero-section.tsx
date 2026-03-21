@@ -55,7 +55,7 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="text-title mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
+                                    className="text-white/80 mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
                                     Colchones de tecnología avanzada para un sueño reparador
                                 </TextEffect>
                                 <TextEffect

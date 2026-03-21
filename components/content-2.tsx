@@ -3,7 +3,8 @@ import Image from 'next/image'
 
 export default function ContentSection() {
     return (
-        <section className="pt-16 pb-24 md:pt-32 md:pb-32 font-sans">
+        <div className='pb-35'>
+        <section className="pt-16 pb-24 md:pt-40 md:pb-40 font-sans">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
                 <h2 className="relative z-10 max-w-xl text-4xl font-semibold text-balance text-title lg:text-5xl">El ecosistema WH: Ingeniería al servicio de tu sueño.</h2>
                 <div className="relative">
@@ -51,5 +52,6 @@ export default function ContentSection() {
                 </div>
             </div>
         </section>
+        </div>
     )
 }

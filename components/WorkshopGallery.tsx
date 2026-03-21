@@ -42,6 +42,7 @@ const WorkshopGallery = () => {
   ];
 
   return (
+    <div className='pt-15'>
     <section className="py-20 bg-transparent text-foreground font-sans">
       <div className="container mx-auto px-4">
         {/* Cabecera */}
@@ -129,6 +130,7 @@ const WorkshopGallery = () => {
         )}
       </AnimatePresence>
     </section>
+    </div>
   );
 };
 
