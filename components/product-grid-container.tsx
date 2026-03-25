@@ -72,7 +72,7 @@ export default function ProductGridContainer() {
                             key={product.id}
                             layoutId={`card-${product.id}`}
                             onClick={() => setSelectedProduct(product)}
-                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-card/50 dark:bg-white/5 backdrop-blur-xl shadow-[0_3px_16px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.14)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 hover:scale-[1.02]"
+                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-xl shadow-[0_3px_16px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.14)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 hover:scale-[1.02]"
                         >
                             <div className="relative aspect-[4/5] overflow-hidden">
                                 <motion.img
