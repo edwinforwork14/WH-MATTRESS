@@ -5,6 +5,16 @@
 :root {
   --background: oklch(1.0000 0 0);
   --foreground: oklch(0 0 0);
+
+  /* =========================
+     GLASS VARIABLES (LIGHT)
+     ========================= */
+  --glass-top: oklch(1 0 0 / 0.22);
+  --glass-bottom: oklch(1 0 0 / 0.06);
+  --glass-border: oklch(1 0 0 / 0.15);
+  --glass-highlight: oklch(1 0 0 / 0.25);
+  --glass-glow: oklch(1 0 0 / 0.25);
+
   --card: oklch(0.9700 0.0140 254.6040);
   --card-foreground: oklch(0 0 0);
   --popover: oklch(1.0000 0 0);
@@ -68,6 +78,16 @@
 .dark {
   --background: oklch(0.1805 0.0122 285.1085);
   --foreground: oklch(1.0000 0 0);
+
+  /* =========================
+     GLASS VARIABLES (DARK)
+     ========================= */
+  --glass-top: oklch(0.35 0.02 260 / 0.35);
+  --glass-bottom: oklch(0.25 0.02 260 / 0.2);
+  --glass-border: oklch(1 0 0 / 0.08);
+  --glass-highlight: oklch(1 0 0 / 0.08);
+  --glass-glow: oklch(1 0 0 / 0.06);
+
   --card: oklch(0.2478 0 0);
   --card-foreground: oklch(0.7460 0.1600 232.6610);
   --popover: oklch(0.2690 0 0);
@@ -210,36 +230,33 @@
   }
 
   /* =========================
-     GLASS BASE (FIXED - SIN DOBLE BORDE)
+     GLASS BASE
      ========================= */
   .glass {
     position: relative;
     border-radius: 2.5rem;
 
-    /* Fondo tipo vidrio */
     background: linear-gradient(
       to bottom,
-      oklch(1 0 0 / 0.22),
-      oklch(1 0 0 / 0.06)
+      var(--glass-top),
+      var(--glass-bottom)
     );
 
-    /* Blur iOS */
+    /* 🔥 ESTE ES EL DESENFOQUE REAL DEL FONDO */
     backdrop-filter: blur(30px) saturate(180%);
     -webkit-backdrop-filter: blur(30px) saturate(180%);
 
-    /* ❌ eliminamos border real */
     border: none;
 
-    /* ✅ borde simulado + sombra */
     box-shadow:
       0 8px 32px oklch(0 0 0 / 0.15),
-      inset 0 0 0 1px oklch(1 0 0 / 0.15);
+      inset 0 0 0 1px var(--glass-border);
 
     overflow: hidden;
   }
 
   /* =========================
-     BRILLO LATERAL (GLOW)
+     GLOW LATERAL
      ========================= */
   .glass::before {
     content: "";
@@ -247,14 +264,14 @@
     inset: 0;
 
     background:
-      radial-gradient(circle at left center, oklch(1 0 0 / 0.25), transparent 40%),
-      radial-gradient(circle at right center, oklch(1 0 0 / 0.25), transparent 40%);
+      radial-gradient(circle at left center, var(--glass-glow), transparent 40%),
+      radial-gradient(circle at right center, var(--glass-glow), transparent 40%);
 
     pointer-events: none;
   }
 
   /* =========================
-     REFLEJO SUPERIOR (SUAVIZADO)
+     REFLEJO SUPERIOR
      ========================= */
   .glass::after {
     content: "";
@@ -266,8 +283,7 @@
 
     background: linear-gradient(
       to bottom,
-      oklch(1 0 0 / 0.25),
-      oklch(1 0 0 / 0.05),
+      var(--glass-highlight),
       transparent
     );
 
@@ -276,7 +292,7 @@
   }
 
   /* =========================
-     VARIANTE DOCK (MÁS INTENSA)
+     VARIANTE DOCK
      ========================= */
   .glass-dock {
     position: relative;
@@ -284,8 +300,8 @@
 
     background: linear-gradient(
       to bottom,
-      oklch(1 0 0 / 0.28),
-      oklch(1 0 0 / 0.08)
+      var(--glass-top),
+      var(--glass-bottom)
     );
 
     backdrop-filter: blur(40px) saturate(200%);
@@ -295,7 +311,7 @@
 
     box-shadow:
       0 10px 40px oklch(0 0 0 / 0.2),
-      inset 0 0 0 1px oklch(1 0 0 / 0.18);
+      inset 0 0 0 1px var(--glass-border);
 
     overflow: hidden;
   }
@@ -306,10 +322,8 @@
     inset: 0;
 
     background:
-      radial-gradient(circle at left center, oklch(1 0 0 / 0.3), transparent 40%),
-      radial-gradient(circle at right center, oklch(1 0 0 / 0.3), transparent 40%);
-
-    pointer-events: none;
+      radial-gradient(circle at left center, var(--glass-glow), transparent 40%),
+      radial-gradient(circle at right center, var(--glass-glow), transparent 40%);
   }
 
   .glass-dock::after {
@@ -322,12 +336,10 @@
 
     background: linear-gradient(
       to bottom,
-      oklch(1 0 0 / 0.3),
-      oklch(1 0 0 / 0.06),
+      var(--glass-highlight),
       transparent
     );
 
     border-radius: inherit;
-    pointer-events: none;
   }
 }
