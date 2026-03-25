@@ -209,7 +209,125 @@
     background-image: url('/ctasection.png');
   }
 
+  /* =========================
+     GLASS BASE (FIXED - SIN DOBLE BORDE)
+     ========================= */
   .glass {
-    @apply border border-white/20 bg-white/10 shadow-2xl backdrop-blur-xl backdrop-saturate-150 shadow-md;
+    position: relative;
+    border-radius: 2.5rem;
+
+    /* Fondo tipo vidrio */
+    background: linear-gradient(
+      to bottom,
+      oklch(1 0 0 / 0.22),
+      oklch(1 0 0 / 0.06)
+    );
+
+    /* Blur iOS */
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+
+    /* ❌ eliminamos border real */
+    border: none;
+
+    /* ✅ borde simulado + sombra */
+    box-shadow:
+      0 8px 32px oklch(0 0 0 / 0.15),
+      inset 0 0 0 1px oklch(1 0 0 / 0.15);
+
+    overflow: hidden;
+  }
+
+  /* =========================
+     BRILLO LATERAL (GLOW)
+     ========================= */
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+      radial-gradient(circle at left center, oklch(1 0 0 / 0.25), transparent 40%),
+      radial-gradient(circle at right center, oklch(1 0 0 / 0.25), transparent 40%);
+
+    pointer-events: none;
+  }
+
+  /* =========================
+     REFLEJO SUPERIOR (SUAVIZADO)
+     ========================= */
+  .glass::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+
+    background: linear-gradient(
+      to bottom,
+      oklch(1 0 0 / 0.25),
+      oklch(1 0 0 / 0.05),
+      transparent
+    );
+
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* =========================
+     VARIANTE DOCK (MÁS INTENSA)
+     ========================= */
+  .glass-dock {
+    position: relative;
+    border-radius: 2.5rem;
+
+    background: linear-gradient(
+      to bottom,
+      oklch(1 0 0 / 0.28),
+      oklch(1 0 0 / 0.08)
+    );
+
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+
+    border: none;
+
+    box-shadow:
+      0 10px 40px oklch(0 0 0 / 0.2),
+      inset 0 0 0 1px oklch(1 0 0 / 0.18);
+
+    overflow: hidden;
+  }
+
+  .glass-dock::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+      radial-gradient(circle at left center, oklch(1 0 0 / 0.3), transparent 40%),
+      radial-gradient(circle at right center, oklch(1 0 0 / 0.3), transparent 40%);
+
+    pointer-events: none;
+  }
+
+  .glass-dock::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+
+    background: linear-gradient(
+      to bottom,
+      oklch(1 0 0 / 0.3),
+      oklch(1 0 0 / 0.06),
+      transparent
+    );
+
+    border-radius: inherit;
+    pointer-events: none;
   }
 }
