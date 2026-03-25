@@ -40,7 +40,7 @@ export default function HeroSection() {
                     <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
                     <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
                 </div>
-                <section className="lg:mt-30 flex flex-col-reverse lg:flex-row justify-between items-center mx-2 sm:mx-4 lg:mx-10 relative overflow-hidden rounded-3xl p-3 sm:p-8 md:p-14 glass dark:bg-background/50 dark:border-border dark:backdrop-blur-lg">
+                <section className="lg:mt-30 flex flex-col-reverse lg:flex-row justify-between items-center mx-2 sm:mx-4 lg:mx-10 relative overflow-hidden rounded-3xl p-3 sm:p-8 md:p-14 glass dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5">
                         <div className="w-full lg:w-[60%]">
                             <AnimatedGroup
                                 variants={{
