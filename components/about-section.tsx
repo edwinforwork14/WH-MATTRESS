@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
 import { Target, Eye, Clock, Users, Package } from "lucide-react"
 
 
@@ -60,7 +59,7 @@ export default function AboutSection() {
                 >
                     {/* Badge */}
                     <motion.div variants={transitionVariants.item} className="mb-5">
-                        <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                        <span className="glass inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-about">
                             Sobre Nosotros
                         </span>
                     </motion.div>
@@ -69,17 +68,16 @@ export default function AboutSection() {
                         variants={transitionVariants.item}
                         className="mx-auto max-w-3xl text-balance text-4xl font-semibold md:text-5xl lg:text-6xl"
                     >
-                        Damos forma al descanso que tu cuerpo merece
+                        Diseñamos el descanso que tu cuerpo merece
                     </motion.h2>
 
                     <motion.p
                         variants={transitionVariants.item}
                         className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground"
                     >
-                        Somos una empresa especializada en tecnología del descanso: colchones de muelles ensacados,
-                        espumas viscoelásticas y sistemas de soporte lumbar que transforman cada noche en recuperación total.
-                        Más de una década de experiencia nos respalda en cada colchón que fabricamos, combinando
-                        ergónomia, transpirabilidad y firmeza en perfecta armonía.
+                        Especialistas en tecnología del descanso. Diseñamos y fabricamos colchones con muelles ensacados, espumas viscoelásticas y sistemas de soporte lumbar que convierten cada noche en un proceso real de recuperación.<br />
+                        <br />
+                        Con más de una década de experiencia, perfeccionamos cada detalle para lograr el equilibrio ideal entre ergonomía, transpirabilidad y firmeza, creando un descanso que se adapta a tu cuerpo y eleva tu bienestar.
                     </motion.p>
                 </motion.div>
 
@@ -91,12 +89,10 @@ export default function AboutSection() {
                     viewport={{ once: true, margin: "-60px" }}
                     className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2"
                 >
-                    {/* Mission Card */}
+                    {/* Mission */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg">
-                            {/* Accent gradient top bar */}
-                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/60 via-primary to-secondary/60 transition-all duration-300 group-hover:from-primary/80 group-hover:to-secondary/80" />
-                            <CardContent className="p-8">
+                        <div className="group relative h-full overflow-hidden rounded-2xl border bg-background/50 backdrop-blur-lg transition-all duration-300 hover:scale-[1.02]">
+                            <div className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
                                 </div>
@@ -109,16 +105,14 @@ export default function AboutSection() {
                                     mediante colchones con muelles ensacados, espumas viscoelásticas e independencia de lechos
                                     — porque un sueño reparador lo cambia todo.
                                 </p>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                     </motion.div>
 
-                    {/* Vision Card */}
+                    {/* Vision */}
                     <motion.div variants={transitionVariants.item}>
-                        <Card className="group relative h-full overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:border-secondary/30 hover:shadow-lg">
-                            {/* Accent gradient top bar */}
-                            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/60 via-secondary to-primary/60 transition-all duration-300 group-hover:from-secondary/80 group-hover:to-primary/80" />
-                            <CardContent className="p-8">
+                        <div className="group relative h-full overflow-hidden rounded-2xl border bg-background/50 backdrop-blur-lg transition-all duration-300 hover:scale-[1.02]">
+                            <div className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
                                 </div>
@@ -131,8 +125,8 @@ export default function AboutSection() {
                                     certificada. Aspiramos a ser el colchón que elige cada familia que prioriza
                                     su salud y bienestar, construyendo relaciones basadas en la confianza y el descanso real.
                                 </p>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                     </motion.div>
                 </motion.div>
 
@@ -148,7 +142,7 @@ export default function AboutSection() {
                         <motion.div
                             key={stat.label}
                             variants={transitionVariants.item}
-                            className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/50 bg-background/50 px-6 py-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:shadow-md last:col-span-2 md:last:col-span-1"
+                            className="group flex flex-col items-center justify-center gap-2 rounded-2xl border bg-background/50 px-6 py-8 text-center backdrop-blur-lg transition-all duration-300 hover:scale-105 last:col-span-2 md:last:col-span-1"
                         >
                             <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                 {stat.icon}

@@ -40,130 +40,116 @@ export default function HeroSection() {
                     <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
                     <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
                 </div>
-                <section>
-                    <div className="relative pt-24 md:pt-36">
+                <section className="lg:mt-30 flex flex-col-reverse lg:flex-row justify-between items-center mx-2 sm:mx-4 lg:mx-10 relative overflow-hidden rounded-3xl p-3 sm:p-8 md:p-14 glass dark:bg-background/50 dark:border-border dark:backdrop-blur-lg">
+                        <div className="w-full lg:w-[60%]">
+                            <AnimatedGroup
+                                variants={{
+                                    container: {
+                                        visible: {
+                                            transition: {
+                                                staggerChildren: 0.05,
+                                                delayChildren: 0.75,
+                                            },        
+                                        },
+                                    },
+                                    ...transitionVariants,
+                                }}>
+                                <div className="relative mt-6 lg:mt-8 overflow-hidden px-2 sm:px-4 lg:px-6">
+                                    <div className="">
+                                        <Image
+                                            className="w-full h-auto rounded-2xl border border-white/20 bg-border-primary"
+                                            src="/3.jpg"
+                                            alt="Colchón viscoelástico WH Mattress con muelles ensacados – vista superior"
+                                            width={2600}
+                                            height={1340}
+                                            priority
+                                            style={{ aspectRatio: '15/8', objectFit: 'cover' }}
+                                        />
+                                    </div>
+                                </div>
+                            </AnimatedGroup>
+                        </div>
+                        
+                        <div className="w-full lg:w-[40%] max-w-7xl px-4 sm:px-6 lg:pl-10 mt-10 lg:mt-0 lg:py-10">
+                                <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
-                        <div
-                            aria-hidden
-                            className=""
-                        />
+                                    <TextEffect
+                                        preset="fade-in-blur"
+                                        speedSegment={0.3}
+                                        as="h1"
+                                        className="text-white/80 mx-auto mt-8 max-w-9xl text-balance text-2xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-12 xl:text-[4.5rem]">
+                                        El futuro del descanso, hoy
+                                    </TextEffect>
+                                    <TextEffect
+                                        per="line"
+                                        preset="fade-in-blur"
+                                        speedSegment={0.3}
+                                        delay={0.5}
+                                        as="p"
+                                        className="text-white/90 mx-auto mt-6 max-w-4xl text-balance text-base sm:text-lg md:text-xl px-2 sm:px-0">
+                                        Redefinimos el descanso con sistemas viscoelásticos, muelles ensacados y soporte lumbar diseñados para recuperar tu cuerpo cada noche.
+                                    </TextEffect>
 
-                        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="text-white/80 mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
-                                    Colchones de tecnología avanzada para un sueño reparador
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="text-white/90 mx-auto mt-6 max-w-3xl text-balance text-base sm:text-lg px-2 sm:px-0">
-                                    Redefinimos el descanso con colchones viscoelásticos, muelles ensacados y sistemas de soporte lumbar diseñados para transformar cada noche en recuperación total.
-                                </TextEffect>
-
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
+                                    <AnimatedGroup
+                                        variants={{
+                                            container: {
+                                                visible: {
+                                                    transition: {
+                                                        staggerChildren: 0.05,
+                                                        delayChildren: 0.75,
+                                                    },
                                                 },
                                             },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                    className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 w-full sm:w-auto">
+                                            ...transitionVariants,
+                                        }}
+                                        className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 text-white">
+                                        <div
+                                            key={1}
+                                            className="bg-foreground/10 rounded-full border p-0.5 w-full sm:w-auto">
+                                            <Button
+                                                asChild
+                                                size="lg"
+                                                className="rounded-full px-8 py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
+                                                <a
+                                                    href="#cta"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        const el = document.getElementById('cta');
+                                                        if (el) {
+                                                            const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+                                                            window.scrollTo({ top, behavior: 'smooth' });
+                                                        }
+                                                    }}
+                                                >
+                                                    <span className="text-white">Contáctanos</span>
+                                                </a>
+                                            </Button>
+                                        </div>
                                         <Button
+                                            key={2}
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base w-full sm:w-auto">
+                                            variant="ghost"
+                                            className="rounded-full px-6 py-4 text-base sm:text-lg font-semibold w-full sm:w-auto">
                                             <a
-                                                href="#cta"
+                                                href="#products"
                                                 onClick={(e) => {
                                                     e.preventDefault();
-                                                    const el = document.getElementById('cta');
+                                                    const el = document.getElementById('products');
                                                     if (el) {
                                                         const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
                                                         window.scrollTo({ top, behavior: 'smooth' });
                                                     }
                                                 }}
                                             >
-                                                <span className="text-white">Contáctanos</span>
+                                                <span className="text-nowrap text-white">Ver Productos</span>
                                             </a>
                                         </Button>
-                                    </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="rounded-xl px-5 w-full sm:w-auto">
-                                        <a
-                                            href="#products"
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                const el = document.getElementById('products');
-                                                if (el) {
-                                                    const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
-                                                    window.scrollTo({ top, behavior: 'smooth' });
-                                                }
-                                            }}
-                                        >
-                                            <span className="text-nowrap text-white">Ver Productos</span>
-                                        </a>
-                                    </Button>
-                                </AnimatedGroup>
-                            </div>
-                        </div>
-
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.75,
-                                        },
-                                    },
-                                },
-                                ...transitionVariants,
-                            }}>
-                            <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 sm:p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <Image
-                                        className="bg-background w-full rounded-2xl hidden dark:block"
-                                        src="/3.jpg"
-                                        alt="Colchón viscoelástico WH Mattress con muelles ensacados – vista superior"
-                                        width={2700}
-                                        height={1440}
-                                        priority
-                                        style={{ aspectRatio: '15/8', objectFit: 'cover' }}
-                                    />
-                                    <Image
-                                        className="z-2 border-border/25 w-full rounded-2xl border dark:hidden"
-                                        src="/3.jpg"
-                                        alt="Colchón viscoelástico WH Mattress con muelles ensacados – vista superior"
-                                        width={2700}
-                                        height={1440}
-                                        priority
-                                        style={{ aspectRatio: '15/8', objectFit: 'cover' }}
-                                    />
+                                    </AnimatedGroup>
                                 </div>
                             </div>
-                        </AnimatedGroup>
-                    </div>
                 </section>
+
                 <section className="hidden sm:block pb-4 pt-4 md:pb-8">
                     <div className="group relative m-auto max-w-5xl px-6">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">

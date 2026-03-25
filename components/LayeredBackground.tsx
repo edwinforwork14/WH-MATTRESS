@@ -33,6 +33,7 @@ const LayeredBackground: React.FC<LayeredBackgroundProps> = ({ className = "" })
 
 {/* --- CAPAS SUPERIORES (ULTRA ORGÁNICAS / CASI EN EL BORDE) --- */}
 
+<g transform="translate(0, -40)">
 <path
   d="M0,0 H1000 V295 
      C920,259 840,345 700,308 
@@ -87,6 +88,7 @@ const LayeredBackground: React.FC<LayeredBackgroundProps> = ({ className = "" })
   className="fill-layered-deep"
   filter={`url(#${shadowFilterId})`}
 />
+</g>
 
 
 
