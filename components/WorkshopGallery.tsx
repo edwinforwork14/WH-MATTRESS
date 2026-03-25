@@ -37,21 +37,21 @@ const WorkshopGallery = () => {
   return (
     <div className='pt-15'>
       <section className="py-20 bg-transparent text-foreground font-sans">
-        <div className="container mx-auto px-4 border border-white/20 bg-background/20 backdrop-blur-lg dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-3xl p-3 sm:p-8 md:p-14 shadow-lg">
+        <div className="container mx-auto px-4 glass rounded-3xl p-3 sm:p-8 md:p-14 shadow-lg">
           {/* Flex container para alinear texto e imágenes */}
           <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-center">
             
             {/* Cabecera / Textos (Izquierda) */}
             <div className="w-full lg:w-1/3 flex flex-col gap-6">
               <div>
-                <h1 className="text-2xl font-bold tracking-widest uppercase text-[#4ac0b0] mb-2">
+                <h1 className="text-2xl font-bold tracking-widest uppercase text-[#132d32] mb-2">
                   INFRAESTRUCTURA
                 </h1>
                 <h2 className="text-5xl font-extrabold tracking-tight leading-tight">
                   Donde nace el <br /> descanso real.
                 </h2>
               </div>
-              <h3 className="text-muted-foreground border-l-2 border-[#4ac0b0] pl-4 text-xl dark:text-white">
+              <h3 className="text-muted-foreground border-l-2 border-[#132d32] pl-4 text-xl dark:text-white">
                 Diseñamos y fabricamos desde nuestras propias instalaciones en Panamá.
               </h3>
             </div>

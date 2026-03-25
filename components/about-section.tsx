@@ -42,7 +42,7 @@ const stats = [
 
 export default function AboutSection() {
     return (
-        <section className="relative py-24 md:py-32 overflow-hidden font-sans">
+        <section className="relative py-12 md:py-12 overflow-hidden font-sans">
             <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -z-10 size-full [background:radial-gradient(80%_60%_at_50%_0%,var(--color-primary)/8%,transparent_70%)]"
@@ -73,7 +73,7 @@ export default function AboutSection() {
 
                     <motion.p
                         variants={transitionVariants.item}
-                        className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground"
+                        className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground jus"
                     >
                         Especialistas en tecnología del descanso. Diseñamos y fabricamos colchones con muelles ensacados, espumas viscoelásticas y sistemas de soporte lumbar que convierten cada noche en un proceso real de recuperación.<br />
                         <br />
@@ -91,7 +91,7 @@ export default function AboutSection() {
                 >
                     {/* Mission */}
                     <motion.div variants={transitionVariants.item}>
-                        <div className="glass group relative h-full overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white/20 dark:bg-white/5 backdrop-blur-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
+                        <div className="glass shadow group relative h-full overflow-hidden rounded-[2.5rem] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
                             <div className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
@@ -111,7 +111,7 @@ export default function AboutSection() {
 
                     {/* Vision */}
                     <motion.div variants={transitionVariants.item}>
-                        <div className="glass group relative h-full overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white/20 dark:bg-white/5 backdrop-blur-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
+                        <div className="glass shadow group relative h-full overflow-hidden rounded-[2.5rem] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
                             <div className="p-8">
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
@@ -142,7 +142,7 @@ export default function AboutSection() {
                         <motion.div
                             key={stat.label}
                             variants={transitionVariants.item}
-                            className="glass group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/60 dark:border-white/10 bg-background/40 dark:bg-white/5 px-6 py-8 text-center backdrop-blur-2xl shadow-[0_4px_20px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_6px_24px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_28px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 last:col-span-2 md:last:col-span-1"
+                            className="glass group flex flex-col items-center justify-center gap-2 rounded-[2.5rem] px-6 py-8 sm:p-8 md:p-14 text-center transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_28px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 shadow-lg last:col-span-2 md:last:col-span-1"
                         >
                             <div className="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                 {stat.icon}

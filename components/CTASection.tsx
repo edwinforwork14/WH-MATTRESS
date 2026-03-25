@@ -28,7 +28,7 @@ export default function CTASection() {
                         delay={0.5}
                         as="p"
                         className="text-base w-full mb-10 text-white dark:text-white sm:text-lg md:text-xl">
-                        Descubre los colchones WH: tecnología viscoelástica, muelles ensacados y soporte lumbar diseñados para darte el sueño reparador que mereces.
+                        Descubre WH: el descanso que tu cuerpo va a notar desde la primera noche.
                     </TextEffect>
                     <div className="flex justify-center">
                         <WhatsAppButton phoneNumber="50769889415" />

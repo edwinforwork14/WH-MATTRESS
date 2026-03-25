@@ -89,7 +89,7 @@ function FeatureCard({ icon, title, description }: FeatureCard) {
     return (
         <motion.div
             variants={transitionVariants.item}
-            className="group relative flex gap-5 rounded-2xl border border-border/50 bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-background/70 hover:shadow-lg sm:p-8"
+            className="glass shadow-lg group relative flex gap-5 rounded-[2.5rem] p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] sm:p-8"
         >
             {/* accent top bar */}
             <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/40 to-transparent transition-all duration-300 group-hover:via-primary/70" />
@@ -122,9 +122,9 @@ export default function Features() {
                         className="mx-auto max-w-2xl space-y-4 text-center"
                     >
                         <motion.div variants={transitionVariants.item}>
-                            <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
-                                Tecnología de Descanso
-                            </span>
+                        <span className="glass shadow-lg inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-about">
+                            Tecnología de Descanso
+                        </span>
                         </motion.div>
 
                         <motion.h2
@@ -151,7 +151,7 @@ export default function Features() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
-                        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+                        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 shad"
                     >
                         {features.map((feature) => (
                             <FeatureCard key={feature.title} {...feature} />

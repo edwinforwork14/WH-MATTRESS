@@ -22,13 +22,11 @@ export const WhatsAppButton = ({
     <button
       onClick={handleClick}
       className={`
-        group relative flex items-center justify-center gap-3 overflow-hidden
-        px-6 py-3 rounded-lg font-medium transition-all duration-500
-        /* Estilos Light (Usando tus variables) */
-        bg-primary text-primary-foreground border border-border shadow-md
-        hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]
-        /* Estilos Dark (Automáticos por tu clase .dark en el global.css) */
-        dark:bg-secondary dark:text-secondary-foreground dark:border-white/10
+        glass group relative flex items-center justify-center gap-3 overflow-hidden
+        px-8 py-4 rounded-full font-medium transition-all duration-500
+        /* Integración Glass y Efectos */
+        text-white border-white/20 dark:border-white/10 shadow-lg
+        hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]
         ${className}
       `}
     >

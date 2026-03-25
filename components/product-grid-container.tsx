@@ -52,7 +52,7 @@ export default function ProductGridContainer() {
 
     return (
         <section className="mb-15 py-12 md:py-24 font-sans mx-0 my-2 sm:mx-1 lg:mx-2 rounded-3xl p-3 sm:p-8 md:p-14" aria-labelledby="products-heading">
-            <div className="glass mx-0 my-1 rounded-3xl p-3 sm:p-8 ">
+            <div className="glass shadow-lg mx-0 my-1 rounded-3xl p-3 sm:p-8 ">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
@@ -84,8 +84,8 @@ export default function ProductGridContainer() {
                                 <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
                             </div>
                             <div className="p-5">
-                                <h3 className="text-xl font-semibold text-title">{product.name}</h3>
-                                <p className="mt-2 text-sm text-primary font-medium">Ver detalles →</p>
+                                <h3 className="text-xl font-semibold text-title dark:text-layered-mid">{product.name}</h3>
+                                <p className="mt-2 text-sm text-primary dark:text-white font-medium">Ver detalles →</p>
                             </div>
                         </motion.div>
                     ))}
