@@ -37,7 +37,7 @@ const WorkshopGallery = () => {
   return (
     <div className='pt-15'>
       <section className="py-20 bg-transparent text-foreground font-sans">
-        <div className="container mx-auto px-4 border border-white/20 bg-background/20 backdrop-blur-lg dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-3xl p-3 sm:p-8 md:p-14">
+        <div className="container mx-auto px-4 border border-white/20 bg-background/20 backdrop-blur-lg dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-3xl p-3 sm:p-8 md:p-14 shadow-lg">
           {/* Flex container para alinear texto e imágenes */}
           <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-center">
             
