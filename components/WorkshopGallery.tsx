@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -37,10 +37,10 @@ const WorkshopGallery = () => {
   return (
     <div className='pt-15'>
       <section className="py-20 bg-transparent text-foreground font-sans">
-        <div className="container mx-auto px-4 glass rounded-3xl p-3 sm:p-8 md:p-14 shadow-lg">
+        <div className="mx-2 sm:mx-4 lg:mx-10 glass rounded-3xl p-3 sm:p-8 md:p-14 shadow-2xl">
           {/* Flex container para alinear texto e imágenes */}
           <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-center">
-            
+
             {/* Cabecera / Textos (Izquierda) */}
             <div className="w-full lg:w-1/3 flex flex-col gap-6">
               <div>
@@ -74,10 +74,10 @@ const WorkshopGallery = () => {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-95 group-hover:opacity-100"
                     />
-                    
+
                     {/* Overlay gradiente mejorado para legibilidad */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                    
+
                     {/* Textos sobre la imagen */}
                     <div className="absolute bottom-0 left-0 p-6">
                       <h4 className="text-white text-xl font-bold">{img.title}</h4>

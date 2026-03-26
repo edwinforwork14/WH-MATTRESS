@@ -122,9 +122,9 @@ export default function Features() {
                         className="mx-auto max-w-2xl space-y-4 text-center"
                     >
                         <motion.div variants={transitionVariants.item}>
-                        <span className="glass shadow-lg inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-about">
-                            Tecnología de Descanso
-                        </span>
+                            <span className="glass shadow-lg inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-about">
+                                Tecnología de Descanso
+                            </span>
                         </motion.div>
 
                         <motion.h2

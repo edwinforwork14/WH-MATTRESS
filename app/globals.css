@@ -233,7 +233,7 @@
      GLASS BASE
      ========================= */
   .glass {
-    @apply border border-white/20 bg-background/20 backdrop-blur-lg dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5;
+    @apply border border-black/[0.08] bg-white/50 backdrop-blur-2xl shadow-[0_24px_60px_-12px_rgba(0,0,0,0.15),inset_0_2px_10px_rgba(255,255,255,1)] ring-1 ring-white/80 dark:bg-white/5 dark:border-white/10 dark:backdrop-blur-2xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.07)] dark:ring-1 dark:ring-inset dark:ring-white/5;
   }
 
   /* =========================

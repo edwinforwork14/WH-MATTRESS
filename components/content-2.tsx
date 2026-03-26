@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function ContentSection() {
     return (
         <div className='pb-35'>
-        <section className="pt-16 pb-24 md:pt-40 md:pb-40 font-sans glass rounded-2xl shadow-lg">
+        <section className="mx-2 sm:mx-4 lg:mx-10 py-12 md:py-16 font-sans glass rounded-[2.5rem] shadow-2xl">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
                 <h2 className="relative z-10 text-4xl font-semibold text-title lg:text-5xl">El ecosistema WH:<br />Ingeniería al servicio de tu sueño.</h2>
                 <div className="relative">

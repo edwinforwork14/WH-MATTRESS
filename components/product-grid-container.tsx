@@ -51,47 +51,47 @@ export default function ProductGridContainer() {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
     return (
-        <section className="mb-15 py-12 md:py-24 font-sans mx-0 my-2 sm:mx-1 lg:mx-2 rounded-3xl p-3 sm:p-8 md:p-14" aria-labelledby="products-heading">
-            <div className="glass shadow-lg mx-0 my-1 rounded-3xl p-3 sm:p-8 ">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="mb-15 py-12 md:py-24 font-sans mx-2 sm:mx-4 lg:mx-10" aria-labelledby="products-heading">
+            <div className="shadow-2xl glass rounded-3xl p-6 sm:p-8 md:p-14">
+                <div>
 
-                {/* Header */}
-                <div className="mb-16 text-center">
-                    <h2 id="products-heading" className="text-4xl font-semibold text-balance text-title sm:text-5xl">
-                        Nuestra Colección Premium
-                    </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                        Explora la ingeniería detrás de tu descanso.
-                    </p>
-                </div>
+                    {/* Header */}
+                    <div className="mb-16 text-center">
+                        <h2 id="products-heading" className="text-4xl font-semibold text-balance text-title sm:text-5xl">
+                            Nuestra Colección Premium
+                        </h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                            Explora la ingeniería detrás de tu descanso.
+                        </p>
+                    </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {PRODUCTS.map((product) => (
-                        <motion.div
-                            key={product.id}
-                            layoutId={`card-${product.id}`}
-                            onClick={() => setSelectedProduct(product)}
-                            className="group cursor-pointer overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-xl shadow-[0_3px_16px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.14)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 hover:scale-[1.02]"
-                        >
-                            <div className="relative aspect-[4/5] overflow-hidden">
-                                <motion.img
-                                    layoutId={`image-${product.id}`}
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
-                            </div>
-                            <div className="p-5">
-                                <h3 className="text-xl font-semibold text-title dark:text-layered-mid">{product.name}</h3>
-                                <p className="mt-2 text-sm text-primary dark:text-white font-medium">Ver detalles →</p>
-                            </div>
-                        </motion.div>
-                    ))}
+                    {/* Grid */}
+                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {PRODUCTS.map((product) => (
+                            <motion.div
+                                key={product.id}
+                                layoutId={`card-${product.id}`}
+                                onClick={() => setSelectedProduct(product)}
+                                className="group cursor-pointer overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-xl shadow-[0_3px_16px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.14)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 hover:scale-[1.02]"
+                            >
+                                <div className="relative aspect-[4/5] overflow-hidden">
+                                    <motion.img
+                                        layoutId={`image-${product.id}`}
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity group-hover:opacity-100" />
+                                </div>
+                                <div className="p-5">
+                                    <h3 className="text-xl font-semibold text-title dark:text-layered-mid">{product.name}</h3>
+                                    <p className="mt-2 text-sm text-primary dark:text-white font-medium">Ver detalles →</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
             {/* ── Modal con Expansión Lateral ── */}
             <AnimatePresence>
                 {selectedProduct && (

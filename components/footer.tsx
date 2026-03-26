@@ -104,16 +104,8 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="border-t pt-50 relative z-20 font-sans" aria-label="Pie de página de WH Mattress">
+        <footer className="relative font-sans" aria-label="Pie de página de WH Mattress">
             <div className="mb-8 border-b md:mb-12">
-                <div className="mx-auto flex max-w-5xl flex-wrap items-end justify-between gap-6 px-6 pb-6">
-                    <Link
-                        href="/"
-                        aria-label="WH Mattress – ir al inicio"
-                        className="block size-fit">
-                        <Image src="/Logo.png" alt="WH Mattress – logotipo oficial" width={150} height={40} className="object-contain" />
-                    </Link>
-                </div>
             </div>
             <div className='bg-transparent pt-12 pb-17'>
                 <div className="mx-auto max-w-5xl px-6 pb-12 flex flex-col items-center">
