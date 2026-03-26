@@ -77,7 +77,7 @@ export default function HeroSection() {
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
                                 as="h1"
-                                className="text-white/80 mx-auto mt-8 max-w-9xl text-balance text-2xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-12 xl:text-[4.5rem]">
+                                className="text-white/80 mx-auto mt-8 max-w-9xl text-balance text-6xl font-semibold sm:text-7xl md:text-7xl lg:text-8xl lg:mt-12 xl:text-[6rem]">
                                 El futuro del descanso, hoy
                             </TextEffect>
                             <TextEffect

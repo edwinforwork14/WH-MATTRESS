@@ -61,13 +61,13 @@ export const HeroHeader = () => {
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
                             <a href="/" className="flex items-center space-x-2" aria-label="WH Mattress – ir al inicio">
-                                <Image src="/4- (WH) 1.png" alt="WH Mattress – logotipo oficial" width={80} height={32} priority className='pt-2' />
+                                <Image src="/icon.png" alt="WH Mattress – logotipo oficial" width={80} height={32} priority className='pt-2' />
                             </a>
 
                             {/* Botón hamburguesa con ícono animado */}
                             <button
                                 onClick={() => setMenuState(!menuState)}
-                                className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                className="text-white relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
                                 <AnimatePresence mode="wait" initial={false}>
                                     <motion.span
                                         key={menuState ? 'close' : 'open'}
