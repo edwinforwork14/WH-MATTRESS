@@ -109,22 +109,32 @@ export default function FooterSection() {
             </div>
             <div className='bg-transparent pt-12 pb-17'>
                 <div className="mx-auto max-w-5xl px-6 pb-12 flex flex-col items-center">
-                    <div className="w-full grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
-                        {links.map((link, index) => (
-                            <div
-                                key={index}
-                                className="space-y-4 text-sm">
-                                <span className="block font-medium text-white/80">{link.group}</span>
-                                {link.items.map((item, index) => (
-                                    <Link
-                                        key={index}
-                                        href={item.href}
-                                        className="text-white/80 hover:text-white block duration-150">
-                                        <span>{item.title}</span>
-                                    </Link>
-                                ))}
-                            </div>
-                        ))}
+                    <div className="w-full flex flex-col lg:flex-row justify-between gap-12 lg:gap-8 text-center lg:text-left">
+                        <div className="w-full lg:w-1/4 flex justify-center lg:justify-start">
+                            <Link
+                                href="/"
+                                aria-label="WH Mattress – ir al inicio"
+                                className="block size-fit">
+                                <Image src="/Logo.png" alt="WH Mattress – logotipo oficial" width={150} height={40} className="object-contain" />
+                            </Link>
+                        </div>
+                        <div className="w-full lg:w-[70%] grid grid-cols-2 gap-8 sm:grid-cols-4">
+                            {links.map((link, index) => (
+                                <div
+                                    key={index}
+                                    className="space-y-4 text-sm mt-0">
+                                    <span className="block font-medium text-white/80">{link.group}</span>
+                                    {link.items.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href={item.href}
+                                            className="text-white/80 hover:text-white block duration-150">
+                                            <span>{item.title}</span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="flex flex-col justify-center mt-12 items-center text-center">

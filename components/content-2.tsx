@@ -5,7 +5,7 @@ export default function ContentSection() {
     return (
         <div className='pb-35'>
         <section className="mx-2 sm:mx-4 lg:mx-10 py-12 md:py-16 font-sans glass rounded-[2.5rem] shadow-2xl">
-            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
+            <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 pb-12">
                 <h2 className="relative z-10 text-4xl font-semibold text-title lg:text-5xl">El ecosistema WH:<br />Ingeniería al servicio de tu sueño.</h2>
                 <div className="relative">
                     <div className="relative z-10 space-y-4 md:w-1/2">
@@ -18,14 +18,14 @@ export default function ContentSection() {
                                     <Zap className="size-4" />
                                     <h3 className="text-sm font-medium">Tecnología aplicada al sueño</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Sistemas de muelles y espumas de última generación que responden a cada movimiento para un descanso profundo y reparador.</p>
+                                <p className="text-muted-foreground text-sm dark:text-white">Sistemas de muelles y espumas de última generación que responden a cada movimiento para un descanso profundo y reparador.</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
                                     <h3 className="text-sm font-medium">Materiales premium certificados</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Espumas viscoelásticas, látex natural y tejidos antiacáros que garantizan higiene, durabilidad y un rendimiento óptimo año tras año.</p>
+                                <p className="text-muted-foreground text-sm dark:text-white">Espumas viscoelásticas, látex natural y tejidos antiacáros que garantizan higiene, durabilidad y un rendimiento óptimo año tras año.</p>
                             </div>
                         </div>
                     </div>
