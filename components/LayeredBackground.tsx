@@ -33,7 +33,7 @@ const LayeredBackground: React.FC<LayeredBackgroundProps> = ({ className = "" })
 
 {/* --- CAPAS SUPERIORES (ULTRA ORGÁNICAS / CASI EN EL BORDE) --- */}
 
-<g transform="translate(0, -40)">
+<g className="-translate-y-[170px] sm:-translate-y-[40px] transition-transform duration-500">
 <path
   d="M0,0 H1000 V295 
      C920,259 840,345 700,308 

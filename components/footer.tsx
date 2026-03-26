@@ -118,7 +118,7 @@ export default function FooterSection() {
                                 <Image src="/Logo.png" alt="WH Mattress – logotipo oficial" width={150} height={40} className="object-contain" />
                             </Link>
                         </div>
-                        <div className="w-full lg:w-[70%] grid grid-cols-2 gap-8 sm:grid-cols-4">
+                        <div className="w-full lg:w-[70%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {links.map((link, index) => (
                                 <div
                                     key={index}

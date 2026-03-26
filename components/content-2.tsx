@@ -12,7 +12,7 @@ export default function ContentSection() {
                     <p> — desde el colchón hasta la almohada ergónomica, todo conectado para maximizar tu recuperación.</p>
                         <p>WH MATTRESS S.A. evoluciona más allá del colchón convencional. Creamos un ecosistema integral del sueño que fusiona tecnología de muelles ensacados y espuma viscoelástica con materiales de alta gama, para revitalizar tu cuerpo y mente noche tras noche.</p>
 
-                        <div className="grid grid-cols-2 gap-3 pt-6 sm:gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 sm:gap-4">
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Zap className="size-4" />
@@ -30,7 +30,7 @@ export default function ContentSection() {
                         </div>
                     </div>
                     <div className="md:mask-l-from-35% md:mask-l-to-55% mt-12 h-fit md:absolute md:-inset-y-12 md:inset-x-0 md:mt-0">
-                        <div className="border-border/50 relative w-[85%] mx-auto md:ml-auto md:mr-0 md:w-[70%] lg:w-[60%] rounded-2xl border border-dotted p-2">
+                        <div className="border-border/50 relative w-full sm:w-[85%] mx-auto md:ml-auto md:mr-0 md:w-[70%] lg:w-[60%] rounded-2xl border border-dotted p-2">
                             <Image
                                 src="/osito-2.jpg"
                                 className="hidden w-full h-auto rounded-[12px] dark:block"
