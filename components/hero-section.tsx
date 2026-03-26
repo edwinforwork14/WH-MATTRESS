@@ -55,7 +55,7 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="text-white/80 mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
+                                    className="text-foreground mx-auto mt-8 max-w-4xl text-balance text-3xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
                                     Colchones de tecnología avanzada para un sueño reparador
                                 </TextEffect>
                                 <TextEffect
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="text-white/90 mx-auto mt-6 max-w-3xl text-balance text-base sm:text-lg px-2 sm:px-0">
+                                    className="text-foreground mx-auto mt-6 max-w-3xl text-balance text-base sm:text-lg px-2 sm:px-0">
                                     Redefinimos el descanso con colchones viscoelásticos, muelles ensacados y sistemas de soporte lumbar diseñados para transformar cada noche en recuperación total.
                                 </TextEffect>
 
@@ -120,7 +120,7 @@ export default function HeroSection() {
                                                 }
                                             }}
                                         >
-                                            <span className="text-nowrap text-white">Ver Productos</span>
+                                            <span className="text-nowrap text-foreground">Ver Productos</span>
                                         </a>
                                     </Button>
                                 </AnimatedGroup>

@@ -127,7 +127,7 @@ export default function FooterSection() {
                                     <Link
                                         key={index}
                                         href={item.href}
-                                        className="text-white/80 hover:text-white block duration-150">
+                                        className="text-foreground hover:text-white block duration-150">
                                         <span>{item.title}</span>
                                     </Link>
                                 ))}

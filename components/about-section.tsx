@@ -67,14 +67,14 @@ export default function AboutSection() {
 
                     <motion.h2
                         variants={transitionVariants.item}
-                        className="mx-auto max-w-3xl text-balance text-4xl font-semibold md:text-5xl lg:text-6xl"
+                        className="mx-auto max-w-3xl text-foreground text-4xl font-semibold md:text-5xl lg:text-6xl"
                     >
                         Damos forma al descanso que tu cuerpo merece
                     </motion.h2>
 
                     <motion.p
                         variants={transitionVariants.item}
-                        className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground"
+                        className="mx-auto mt-6 max-w-2xl text-foreground text-lg text-muted-foreground"
                     >
                         Somos una empresa especializada en tecnología del descanso: colchones de muelles ensacados,
                         espumas viscoelásticas y sistemas de soporte lumbar que transforman cada noche en recuperación total.
@@ -100,10 +100,10 @@ export default function AboutSection() {
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
                                 </div>
-                                <h3 className="mb-3 text-xl font-semibold text-about">
+                                <h3 className="mb-3 text-xl font-semibold text-foreground">
                                     Nuestra Misión
                                 </h3>
-                                <p className="text-about/80 text-base leading-relaxed">
+                                <p className="text-foreground text-base leading-relaxed">
                                     Democratizar el acceso a colchones de tecnología premium en América Latina.
                                     Nos comprometemos a mejorar la salud postural y la calidad del sueño de nuestros clientes
                                     mediante colchones con muelles ensacados, espumas viscoelásticas e independencia de lechos
@@ -122,10 +122,10 @@ export default function AboutSection() {
                                 <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
                                 </div>
-                                <h3 className="mb-3 text-xl font-semibold text-about">
+                                <h3 className="mb-3 text-xl font-semibold text-foreground">
                                     Nuestra Visión
                                 </h3>
-                                <p className="text-about/80 text-base leading-relaxed">
+                                <p className="text-foreground leading-relaxed">
                                     Liderar el mercado latinoamericano de colchones de tecnología avanzada,
                                     reconocidos por nuestra ingeniería del sueño, soporte lumbar diferenciado y firmeza
                                     certificada. Aspiramos a ser el colchón que elige cada familia que prioriza
