@@ -49,6 +49,9 @@ const PRODUCTS: Product[] = [
 
 export default function ProductGridContainer() {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+    const [showAll, setShowAll] = useState(false);
+
+    const displayedProducts = showAll ? PRODUCTS : PRODUCTS.slice(0, 4);
 
     return (
         <section className="mb-15 py-12 md:py-24 font-sans mx-2 sm:mx-4 lg:mx-10" aria-labelledby="products-heading">
@@ -67,10 +70,16 @@ export default function ProductGridContainer() {
 
                     {/* Grid */}
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {PRODUCTS.map((product) => (
-                            <motion.div
-                                key={product.id}
-                                layoutId={`card-${product.id}`}
+                        <AnimatePresence>
+                            {displayedProducts.map((product) => (
+                                <motion.div
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    exit={{ opacity: 0, scale: 0.9, y: 20, transition: { duration: 0.2 } }}
+                                    transition={{ duration: 0.3 }}
+                                    key={product.id}
+                                    layoutId={`card-${product.id}`}
                                 onClick={() => setSelectedProduct(product)}
                                 className="group cursor-pointer overflow-hidden rounded-2xl border border-border/60 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-xl shadow-[0_3px_16px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.06)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.07)] ring-1 ring-inset ring-black/5 dark:ring-white/5 transition-all duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.14)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 hover:scale-[1.02]"
                             >
@@ -88,8 +97,28 @@ export default function ProductGridContainer() {
                                     <p className="mt-2 text-sm text-primary dark:text-white font-medium">Ver detalles →</p>
                                 </div>
                             </motion.div>
-                        ))}
+                            ))}
+                        </AnimatePresence>
                     </div>
+
+                    {/* Botón Ver Más */}
+                    <AnimatePresence>
+                        {PRODUCTS.length > 4 && (
+                            <motion.div 
+                                layout
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="mt-12 flex justify-center"
+                            >
+                                <button
+                                    onClick={() => setShowAll(!showAll)}
+                                    className="rounded-full border border-border/60 dark:border-white/10 bg-white/50 dark:bg-white/5 px-8 py-3 text-sm font-semibold text-title dark:text-white backdrop-blur-sm transition-all hover:bg-white dark:hover:bg-white/10 shadow-[0_3px_16px_rgba(0,0,0,0.1)] dark:shadow-[0_5px_20px_rgba(0,0,0,0.2)] ring-1 ring-inset ring-black/5 dark:ring-white/5"
+                                >
+                                    {showAll ? "Ver Menos" : "Ver Más Productos"}
+                                </button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
             {/* ── Modal con Expansión Lateral ── */}

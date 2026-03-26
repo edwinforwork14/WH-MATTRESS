@@ -44,14 +44,14 @@ const WorkshopGallery = () => {
             {/* Cabecera / Textos (Izquierda) */}
             <div className="w-full lg:w-1/3 flex flex-col gap-6">
               <div>
-                <h1 className="text-2xl font-bold tracking-widest uppercase text-[#132d32] mb-2">
+                <h1 className="text-2xl font-bold tracking-widest uppercase text-[#4ac0b0] mb-2">
                   INFRAESTRUCTURA
                 </h1>
                 <h2 className="text-5xl font-extrabold tracking-tight leading-tight">
                   Donde nace el <br /> descanso real.
                 </h2>
               </div>
-              <h3 className="text-muted-foreground border-l-2 border-[#132d32] pl-4 text-xl dark:text-white">
+              <h3 className="text-muted-foreground border-l-2 border-[#4ac0b0] pl-4 text-xl dark:text-white">
                 Diseñamos y fabricamos desde nuestras propias instalaciones en Panamá.
               </h3>
             </div>
