@@ -101,7 +101,7 @@ function FeatureCard({ icon, title, description }: FeatureCard) {
 
             <div className="space-y-2">
                 <h3 className="text-sm font-semibold tracking-wide text-title">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+                <p className="text-sm text-title leading-relaxed">{description}</p>
             </div>
         </motion.div>
     )
@@ -137,7 +137,7 @@ export default function Features() {
 
                         <motion.p
                             variants={transitionVariants.item}
-                            className="text-muted-foreground text-base leading-relaxed"
+                            className="text-title text-base leading-relaxed"
                         >
                             Elegir un colchón WH MATTRESS es una inversión en tu bienestar y salud postural.
                             Redefinimos los estándares del sueño reparador con ingeniería avanzada y

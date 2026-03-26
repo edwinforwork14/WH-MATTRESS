@@ -63,7 +63,7 @@ export default function ProductGridContainer() {
                         <h2 id="products-heading" className="text-4xl font-semibold text-balance text-title sm:text-5xl">
                             Nuestra Colección Premium
                         </h2>
-                        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        <p className="mx-auto mt-4 max-w-2xl text-lg text-title">
                             Explora la ingeniería detrás de tu descanso.
                         </p>
                     </div>
@@ -94,7 +94,7 @@ export default function ProductGridContainer() {
                                 </div>
                                 <div className="p-5">
                                     <h3 className="text-xl font-semibold text-title dark:text-layered-mid">{product.name}</h3>
-                                    <p className="mt-2 text-sm text-primary dark:text-white font-medium">Ver detalles →</p>
+                                    <p className="mt-2 text-sm text-title font-medium">Ver detalles →</p>
                                 </div>
                             </motion.div>
                             ))}
@@ -186,7 +186,7 @@ export default function ProductGridContainer() {
 
                                 <div className="mt-6 h-1 w-12 bg-primary/40" />
 
-                                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                                <p className="mt-6 text-lg leading-relaxed text-title">
                                     {selectedProduct.description}
                                 </p>
 

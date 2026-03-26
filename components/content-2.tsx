@@ -18,14 +18,14 @@ export default function ContentSection() {
                                     <Zap className="size-4" />
                                     <h3 className="text-sm font-medium">Tecnología aplicada al sueño</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm dark:text-white">Sistemas de muelles y espumas de última generación que responden a cada movimiento para un descanso profundo y reparador.</p>
+                                <p className="text-title text-sm">Sistemas de muelles y espumas de última generación que responden a cada movimiento para un descanso profundo y reparador.</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
                                     <h3 className="text-sm font-medium">Materiales premium certificados</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm dark:text-white">Espumas viscoelásticas, látex natural y tejidos antiacáros que garantizan higiene, durabilidad y un rendimiento óptimo año tras año.</p>
+                                <p className="text-title text-sm">Espumas viscoelásticas, látex natural y tejidos antiacáros que garantizan higiene, durabilidad y un rendimiento óptimo año tras año.</p>
                             </div>
                         </div>
                     </div>
