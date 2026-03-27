@@ -123,25 +123,48 @@ const AnimationComponent: React.FC<{
         {segment}
       </motion.span>
     ) : per === 'word' ? (
-      <motion.span
-        aria-hidden='true'
-        variants={variants}
-        className='inline-block whitespace-pre'
-      >
-        {segment}
-      </motion.span>
+      segment.includes('\n') ? (
+        <React.Fragment>
+          {segment.split('\n').map((part, index, array) => (
+            <React.Fragment key={index}>
+              {part && (
+                <motion.span
+                  aria-hidden='true'
+                  variants={variants}
+                  className='inline-block whitespace-pre'
+                >
+                  {part}
+                </motion.span>
+              )}
+              {index < array.length - 1 && <br />}
+            </React.Fragment>
+          ))}
+        </React.Fragment>
+      ) : (
+        <motion.span
+          aria-hidden='true'
+          variants={variants}
+          className='inline-block whitespace-pre'
+        >
+          {segment}
+        </motion.span>
+      )
     ) : (
       <motion.span className='inline-block whitespace-pre'>
-        {segment.split('').map((char, charIndex) => (
-          <motion.span
-            key={`char-${charIndex}`}
-            aria-hidden='true'
-            variants={variants}
-            className='inline-block whitespace-pre'
-          >
-            {char}
-          </motion.span>
-        ))}
+        {segment.split('').map((char, charIndex) =>
+          char === '\n' ? (
+            <br key={`char-${charIndex}`} />
+          ) : (
+            <motion.span
+              key={`char-${charIndex}`}
+              aria-hidden='true'
+              variants={variants}
+              className='inline-block whitespace-pre'
+            >
+              {char}
+            </motion.span>
+          )
+        )}
       </motion.span>
     );
 

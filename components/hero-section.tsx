@@ -74,11 +74,10 @@ export default function HeroSection() {
                         <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
 
                             <TextEffect
-                                per="line"
                                 preset="fade-in-blur"
                                 speedSegment={0.3}
                                 as="h1"
-                                className="text-white/80 mx-auto mt-8 max-w-9xl text-6xl font-semibold sm:text-7xl md:text-7xl lg:text-6xl lg:mt-12 xl:text-[5rem] [&>span]:whitespace-nowrap">
+                                className="text-white/80 mx-auto mt-8 whitespace-nowrap text-5xl font-semibold sm:text-6xl md:text-6xl lg:text-5xl lg:mt-12 xl:text-6xl 2xl:text-[4.5rem]">
                                 {`El futuro del\ndescanso, hoy`}
                             </TextEffect>
                             <TextEffect
