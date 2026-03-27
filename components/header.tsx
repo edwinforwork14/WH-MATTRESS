@@ -60,14 +60,18 @@ export const HeroHeader = () => {
                 )}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
-                            <a href="/" className="flex items-center space-x-2" aria-label="WH Mattress – ir al inicio">
-                                <Image src="/icon.png" alt="WH Mattress – logotipo oficial" width={80} height={32} priority className='pt-2' />
+                            <a href="/" className="relative block w-[80px] h-[32px] pt-2 box-content" aria-label="WH Mattress – ir al inicio">
+                                <Image src="/icon_recolor.png" alt="WH Mattress – logotipo oscuro" width={80} height={32} priority className="absolute top-2 left-0 dark:opacity-0" />
+                                <Image src="/icon.png" alt="WH Mattress – logotipo blanco" width={80} height={32} priority className={cn('absolute top-2 left-0 transition-opacity duration-500', isScrolled ? 'opacity-0 dark:opacity-100' : 'opacity-100')} />
                             </a>
 
                             {/* Botón hamburguesa con ícono animado */}
                             <button
                                 onClick={() => setMenuState(!menuState)}
-                                className="text-white relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                className={cn(
+                                    "relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden transition-colors duration-300",
+                                    isScrolled ? "text-foreground" : "text-white"
+                                )}>
                                 <AnimatePresence mode="wait" initial={false}>
                                     <motion.span
                                         key={menuState ? 'close' : 'open'}
