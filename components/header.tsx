@@ -59,10 +59,10 @@ export const HeroHeader = () => {
                     isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5'
                 )}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <a href="/" className="relative block w-[80px] h-[32px] pt-2 box-content" aria-label="WH Mattress – ir al inicio">
-                                <Image src="/icon_recolor.png" alt="WH Mattress – logotipo oscuro" width={80} height={32} priority className="absolute top-2 left-0 dark:opacity-0" />
-                                <Image src="/icon.png" alt="WH Mattress – logotipo blanco" width={80} height={32} priority className={cn('absolute top-2 left-0 transition-opacity duration-500', isScrolled ? 'opacity-0 dark:opacity-100' : 'opacity-100')} />
+                        <div className="flex w-full items-center justify-between lg:w-auto">
+                            <a href="/" className="relative flex items-center justify-center w-[80px] h-[32px]" aria-label="WH Mattress – ir al inicio">
+                                <Image src="/icon_recolor.png" alt="WH Mattress – logotipo oscuro" width={80} height={32} priority className="absolute dark:opacity-0" />
+                                <Image src="/icon.png" alt="WH Mattress – logotipo blanco" width={80} height={32} priority className={cn('absolute transition-opacity duration-500', isScrolled ? 'opacity-0 dark:opacity-100' : 'opacity-100')} />
                             </a>
 
                             {/* Botón hamburguesa con ícono animado */}
@@ -135,7 +135,7 @@ export const HeroHeader = () => {
                                         ))}
                                     </ul>
                                     <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                        <ThemeButton />
+                                        <ThemeButton className="text-foreground dark:text-white" />
                                     </div>
                                 </motion.div>
                             )}
@@ -143,7 +143,7 @@ export const HeroHeader = () => {
 
                         {/* ThemeButton en escritorio */}
                         <div className="hidden lg:flex items-center">
-                            <ThemeButton />
+                            <ThemeButton className={isScrolled ? "text-black dark:text-white" : "text-white"} />
                         </div>
 
                     </div>
