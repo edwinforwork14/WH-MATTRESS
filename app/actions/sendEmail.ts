@@ -17,4 +17,4 @@ export async function sendContactEmail(data: { name: string; email: string; subj
     console.error("Resend Error:", error);
     return { success: false };
   }
-} 
+}
