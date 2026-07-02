@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LogoStroke } from "@/components/logo"
+import Image from "next/image"
 
 export default function LoadingScreen() {
     const [show, setShow] = useState(true)
@@ -45,14 +45,21 @@ export default function LoadingScreen() {
                         className="pointer-events-none absolute inset-0 -z-10 size-full [background:radial-gradient(80%_60%_at_50%_0%,var(--color-primary)/8%,transparent_70%)]"
                     />
 
-                    {/* Animated stroke logo */}
+                    {/* Animated logo */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, filter: "blur(8px)" }}
                         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="mb-8"
                     >
-                        <LogoStroke className="size-16 w-16 text-primary opacity-60" />
+                        <Image
+                            src="/icon.png"
+                            alt="WH Mattress"
+                            width={160}
+                            height={92}
+                            priority
+                            className="h-auto w-auto opacity-80"
+                        />
                     </motion.div>
 
                     {/* WH Mattress text */}
