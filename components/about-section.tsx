@@ -153,12 +153,7 @@ export default function AboutSection() {
                             -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
                             mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
                         }
-                        @media (max-width: 639px) {
-                            .carousel-mask [data-slot="carousel-content"] {
-                                -webkit-mask-image: none;
-                                mask-image: none;
-                            }
-                        }
+
                     `}</style>
                     <motion.div
                         variants={containerVariants}
@@ -180,13 +175,13 @@ export default function AboutSection() {
                                 <CarouselContent>
                                     {commitments.map((item, index) => (
                                         <CarouselItem key={index} className="basis-[65%] sm:basis-[50%] md:basis-[30%] lg:basis-[27%] pt-2 pb-10">
-                                            <div className={`glass shadow-sm group flex flex-col justify-center h-full overflow-hidden rounded-[2rem] p-5 min-h-48 sm:min-h-44 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20 ${
-                                                index === currentSlide ? 'opacity-100 scale-100 blur-none' : 'opacity-70 scale-95 blur-none sm:blur-[1px]'
+                                            <div className={`glass shadow-sm group flex flex-col justify-center h-full rounded-[2rem] p-3 sm:p-5 min-h-40 sm:min-h-44 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20 ${
+                                                index === currentSlide ? 'opacity-100 scale-100 blur-none' : 'opacity-60 scale-95 blur-[2px]'
                                             }`}>
-                                                <div className="mb-3 flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                                                <div className="mb-3 flex size-10 sm:size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                                     {item.icon}
                                                 </div>
-                                                <p className="text-title text-base leading-relaxed">
+                                                <p className="text-title text-[1.0625rem] sm:text-base leading-relaxed">
                                                     {item.text}
                                                 </p>
                                             </div>
