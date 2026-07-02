@@ -217,6 +217,15 @@
   }
 }
 
+/* =========================
+   LOADING SCREEN
+   ========================= */
+html.loading main,
+html.loading section {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Forzar smooth scroll aunque Windows tenga "Reducir animaciones" activado */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -1,7 +1,16 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Target, Eye, Clock, Users, Package } from "lucide-react"
+import { Target, Eye, Clock, Users, Package, CheckCircle2, TrendingUp, BookOpen, Leaf, Zap, Shield, RefreshCw, Award, Lightbulb, Heart, Handshake, Gem } from "lucide-react"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+    CarouselApi,
+} from "@/components/ui/carousel"
 
 
 const transitionVariants = {
@@ -34,6 +43,40 @@ const containerVariants = {
     },
 }
 
+const commitmentIcons = [
+    <CheckCircle2 className="size-5" />,
+    <TrendingUp className="size-5" />,
+    <BookOpen className="size-5" />,
+    <Target className="size-5" />,
+    <Leaf className="size-5" />,
+    <Zap className="size-5" />,
+    <Shield className="size-5" />,
+    <Users className="size-5" />,
+    <RefreshCw className="size-5" />,
+    <Award className="size-5" />,
+]
+
+const commitments = [
+    { text: "Implementar y mantener procesos productivos que garanticen la calidad de nuestros colchones y sus derivados." },
+    { text: "Fomentar la mejora continua de nuestros productos y del sistema de gestión integrado." },
+    { text: "Proveer formación y recursos adecuados para asegurar la competencia de nuestros colaboradores." },
+    { text: "Establecer objetivos claros y medibles de calidad, revisados regularmente para su adecuación y efectividad." },
+    { text: "Uso responsable de los recursos naturales, minimizando los impactos ambientales de nuestras operaciones; promoviendo el reciclaje y el manejo adecuado de la disposición final." },
+    { text: "Utilizar materiales y recursos de manera eficiente, promoviendo la reducción del consumo de energía, agua y otros insumos." },
+    { text: "Proporcionar un ambiente de trabajo seguro, controlando los riesgos laborales en todos los procesos de fabricación, minimizando los accidentes y enfermedades laborales." },
+    { text: "Fomentar la participación y consulta de los colaboradores en nuestras actividades." },
+    { text: "Mantener una cultura de mejora continua en todos los niveles de la organización." },
+    { text: "Nos enfocamos en la eficacia de nuestro sistema de gestión integrado para asegurar el cumplimiento de los requisitos legales, otros requisitos y del cliente." },
+].map((item, index) => ({ ...item, icon: commitmentIcons[index] }))
+
+const values = [
+    { name: "Innovación", icon: <Lightbulb className="size-5" /> },
+    { name: "Calidad", icon: <Shield className="size-5" /> },
+    { name: "Pasión", icon: <Heart className="size-5" /> },
+    { name: "Responsabilidad", icon: <Handshake className="size-5" /> },
+    { name: "Integridad", icon: <Gem className="size-5" /> },
+]
+
 const stats = [
     { value: "10+", label: "Años fabricando colchones", icon: <Clock className="size-5" /> },
     { value: "5,000+", label: "Clientes que duermen mejor", icon: <Users className="size-5" /> },
@@ -41,6 +84,30 @@ const stats = [
 ]
 
 export default function AboutSection() {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [api, setApi] = useState<CarouselApi>()
+
+    useEffect(() => {
+        if (!api) return
+        setCurrentSlide(api.selectedScrollSnap())
+
+        let interval: ReturnType<typeof setInterval>
+        const startInterval = () => {
+            clearInterval(interval)
+            interval = setInterval(() => api.scrollNext(), 3000)
+        }
+        startInterval()
+
+        api.on("select", () => {
+            setCurrentSlide(api.selectedScrollSnap())
+            startInterval()
+        })
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [api])
+
     return (
         <section className="relative py-12 md:py-12 overflow-hidden font-sans">
             <div
@@ -73,12 +140,58 @@ export default function AboutSection() {
 
                     <motion.p
                         variants={transitionVariants.item}
-                        className="mx-auto mt-6 max-w-2xl text-balance text-lg text-title jus"
+                        className="mx-auto mt-6 max-w-4xl text-balance text-[1.18125rem] text-title jus"
                     >
-                        Especialistas en tecnología del descanso. Diseñamos y fabricamos colchones con muelles ensacados, espumas viscoelásticas y sistemas de soporte lumbar que convierten cada noche en un proceso real de recuperación.<br />
+                        En WH MATTRESS S.A., nos comprometemos a ofrecer colchones como soluciones de descanso para satisfacer las expectativas de nuestros clientes, asegurando la calidad de nuestros productos y la mejora continua en nuestros procesos.<br />
                         <br />
-                        Con más de una década de experiencia, perfeccionamos cada detalle para lograr el equilibrio ideal entre ergonomía, transpirabilidad y firmeza, creando un descanso que se adapta a tu cuerpo y eleva tu bienestar.
+                        Para alcanzar estos objetivos, nos comprometemos a:
                     </motion.p>
+
+                    {/* Commitments Carousel */}
+                    <style>{`
+                        .carousel-mask [data-slot="carousel-content"] {
+                            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+                            mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+                        }
+                    `}</style>
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-40px" }}
+                        className="mt-12 pb-4"
+                    >
+                        <motion.div variants={transitionVariants.item}>
+                            <Carousel
+                                setApi={setApi}
+                                opts={{
+                                    align: "center",
+                                    loop: true,
+                                    skipSnaps: false,
+                                }}
+                                className="w-full relative carousel-mask"
+                            >
+                                <CarouselContent>
+                                    {commitments.map((item, index) => (
+                                        <CarouselItem key={index} className="basis-[33%] md:basis-[30%] lg:basis-[27%] pt-2 pb-10">
+                                            <div className={`glass shadow-sm group flex flex-col justify-center h-full overflow-hidden rounded-[2rem] p-5 min-h-44 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20 ${
+                                                index === currentSlide ? 'opacity-100 scale-100 blur-none' : 'opacity-70 scale-95 blur-[1px]'
+                                            }`}>
+                                                <div className="mb-3 flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                                                    {item.icon}
+                                                </div>
+                                                <p className="text-title text-base leading-relaxed">
+                                                    {item.text}
+                                                </p>
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                <CarouselPrevious className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 size-11 rounded-full border-primary/20 bg-background/80 backdrop-blur-sm text-primary shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-200" />
+                                <CarouselNext className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 size-11 rounded-full border-primary/20 bg-background/80 backdrop-blur-sm text-primary shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-200" />
+                            </Carousel>
+                        </motion.div>
+                    </motion.div>
                 </motion.div>
 
                 {/* Mission & Vision cards in two columns */}
@@ -87,7 +200,7 @@ export default function AboutSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
-                    className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2"
+                    className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2"
                 >
                     {/* Mission */}
                     <motion.div variants={transitionVariants.item}>
@@ -100,10 +213,7 @@ export default function AboutSection() {
                                     Nuestra Misión
                                 </h3>
                                 <p className="text-title text-base leading-relaxed">
-                                    Democratizar el acceso a colchones de tecnología premium en América Latina.
-                                    Nos comprometemos a mejorar la salud postural y la calidad del sueño de nuestros clientes
-                                    mediante colchones con muelles ensacados, espumas viscoelásticas e independencia de lechos
-                                    — porque un sueño reparador lo cambia todo.
+                                    Nuestra misión es transformar el descanso de las personas, diseñando y fabricando productos de alta calidad, que se adapten a las necesidades únicas de cada cliente. Nos comprometemos a utilizar tecnología innovadora y materiales superiores para garantizar no solo el confort, sino también la salud y el bienestar. Buscamos ser el pilar de un descanso reparador que impulse la vida diaria de nuestros clientes.
                                 </p>
                             </div>
                         </div>
@@ -120,13 +230,40 @@ export default function AboutSection() {
                                     Nuestra Visión
                                 </h3>
                                 <p className="text-title text-base leading-relaxed">
-                                    Liderar el mercado latinoamericano de colchones de tecnología avanzada,
-                                    reconocidos por nuestra ingeniería del sueño, soporte lumbar diferenciado y firmeza
-                                    certificada. Aspiramos a ser el colchón que elige cada familia que prioriza
-                                    su salud y bienestar, construyendo relaciones basadas en la confianza y el descanso real.
+                                    Aspiramos a ser la marca líder en el mercado de soluciones de descanso, reconocida por nuestra excelencia en la innovación, la calidad de nuestros productos y nuestro servicio al cliente excepcional. Queremos expandir nuestra presencia en toda América, estableciendo un nuevo estándar de lo que significa descansar bien. Visualizamos un futuro donde cada hogar pueda acceder a un descanso de lujo, diseñado para revitalizar el cuerpo y la mente.
                                 </p>
                             </div>
                         </div>
+                    </motion.div>
+                </motion.div>
+
+                {/* Values Cards */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-40px" }}
+                    className="mt-8 text-center"
+                >
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-40px" }}
+                        className="grid grid-cols-2 gap-4 md:grid-cols-5"
+                    >
+                        {values.map((v) => (
+                            <motion.div
+                                key={v.name}
+                                variants={transitionVariants.item}
+                                className="glass group flex flex-col items-center justify-center gap-3 rounded-[2.5rem] px-4 py-8 text-center transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_28px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4)] hover:border-border dark:hover:border-white/20 shadow-lg"
+                            >
+                                <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                                    {v.icon}
+                                </div>
+                                <span className="text-lg font-semibold text-title">{v.name}</span>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </motion.div>
 

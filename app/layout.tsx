@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import JsonLd from "@/components/JsonLd";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -93,6 +94,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://tweakcn.com/live-preview.min.js"
         />
+        <script dangerouslySetInnerHTML={{
+          __html: `document.documentElement.classList.add("loading")`,
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
@@ -104,6 +108,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <LoadingScreen />
           {children}
         </ThemeProvider>
       </body>
