@@ -188,11 +188,11 @@ export default function AboutSection() {
                                                     <div className="clear-both" />
                                                 </div>
 
-                                                <div className="hidden sm:block">
-                                                    <div className="mb-3 flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                                                <div className="hidden sm:block text-center">
+                                                    <div className="mb-3 mx-auto flex size-9 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                                         {item.icon}
                                                     </div>
-                                                    <p className="text-title text-base leading-relaxed text-left text-pretty">
+                                                    <p className="text-title text-base leading-relaxed text-center text-pretty">
                                                         {item.text}
                                                     </p>
                                                 </div>
@@ -218,8 +218,8 @@ export default function AboutSection() {
                     {/* Mission */}
                     <motion.div variants={transitionVariants.item}>
                         <div className="glass shadow group relative h-full overflow-hidden rounded-[2.5rem] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
-                            <div className="p-8">
-                                <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
+                            <div className="p-8 md:text-center">
+                                <div className="mb-5 md:mx-auto flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-colors duration-300 group-hover:bg-primary/15">
                                     <Target className="size-6" />
                                 </div>
                                 <h3 className="mb-3 text-xl font-semibold text-title">
@@ -235,8 +235,8 @@ export default function AboutSection() {
                     {/* Vision */}
                     <motion.div variants={transitionVariants.item}>
                         <div className="glass shadow group relative h-full overflow-hidden rounded-[2.5rem] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_28px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.09)] dark:hover:shadow-[0_12px_36px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.10)] hover:border-border dark:hover:border-white/20">
-                            <div className="p-8">
-                                <div className="mb-5 flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
+                            <div className="p-8 md:text-center">
+                                <div className="mb-5 md:mx-auto flex size-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 transition-colors duration-300 group-hover:bg-secondary/15">
                                     <Eye className="size-6" />
                                 </div>
                                 <h3 className="mb-3 text-xl font-semibold text-title">
