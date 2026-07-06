@@ -127,7 +127,7 @@ export default function AboutSection() {
                     {/* Badge */}
                     <motion.div variants={transitionVariants.item} className="mb-5">
                         <span className="glass inline-flex items-center rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-title">
-                            Sobre Nosotros
+                            Politicas
                         </span>
                     </motion.div>
 
@@ -135,7 +135,7 @@ export default function AboutSection() {
                         variants={transitionVariants.item}
                         className="mx-auto max-w-3xl text-title text-4xl font-semibold md:text-5xl lg:text-6xl"
                     >
-                        Diseñamos el descanso que tu cuerpo merece
+                        Nuestra Política de Calidad y Compromiso
                     </motion.h2>
 
                     <motion.p
