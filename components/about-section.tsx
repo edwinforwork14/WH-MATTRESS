@@ -135,7 +135,7 @@ export default function AboutSection() {
                         variants={transitionVariants.item}
                         className="mx-auto max-w-3xl text-title text-4xl font-semibold md:text-5xl lg:text-6xl"
                     >
-                        Nuestra Política de Calidad y Compromiso
+                        Politica De Sistema De Gestion Integrado
                     </motion.h2>
 
                     <motion.p
